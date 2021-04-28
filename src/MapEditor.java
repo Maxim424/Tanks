@@ -40,7 +40,7 @@ public class MapEditor implements MouseListener {
         mode = 1;
         shiftArray = new int[] {0, 0, 0, 0, 0, 0, 0, 0, 10};
         brush = 7;
-        tapTime = 100;
+        tapTime = 80;
         try {
             dock = ImageIO.read(new File("src/Dock.png"));
             brick = ImageIO.read(new File("src/Brick.png"));
