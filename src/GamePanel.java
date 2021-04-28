@@ -1,7 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.rmi.server.UnicastRemoteObject;
 
 public class GamePanel extends JPanel implements MouseListener {
 
@@ -20,6 +22,7 @@ public class GamePanel extends JPanel implements MouseListener {
     public GamePanel() {
         t1 = System.currentTimeMillis();
         point = new Empty(0, 0);
+        UnitCollection.add(player);
     }
 
     private void update () {
@@ -29,10 +32,9 @@ public class GamePanel extends JPanel implements MouseListener {
         int ms = (int) (t2 - t1);
 
         if (!mapEditor.isActive()) {
-            player.update(ms);
+            UnitCollection.update(ms);
             camera.setPosition(player.getX()-getWidth()/2.0-16, player.getY()-getHeight()/2.0-16, getWidth(), getHeight());
         } else {
-            point.update(ms);
             camera.setPosition(point.getX(), point.getY(), getWidth(), getHeight());
         }
 
@@ -40,6 +42,10 @@ public class GamePanel extends JPanel implements MouseListener {
         t1 = t2;
         keyState.update();
         mapEditor.update(ms);
+
+        if (keyState.keyDown(KeyEvent.VK_Q)) {
+            UnitCollection.spawnBullet(player.getX(), player.getY(), player.top.getAlpha(), ms);
+        }
     }
 
     @Override
@@ -49,7 +55,7 @@ public class GamePanel extends JPanel implements MouseListener {
         update();
 
         map.paint(g);
-        player.paint(g);
+        UnitCollection.paint(g);
         mapEditor.paint(g);
 
         addMouseListener(mapEditor);
@@ -58,7 +64,6 @@ public class GamePanel extends JPanel implements MouseListener {
 
     @Override
     public void mouseClicked(MouseEvent e) {
-
     }
 
     @Override

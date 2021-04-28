@@ -28,8 +28,11 @@ public class Main {
         // 20 Красная башня
         ImageHelper.crop(3, 0, 20);
 
-        // 31 Красная башня
+        // 31 Синяя башня
         ImageHelper.crop(3, 2, 31);
+
+        // 32 Пуля башня
+        ImageHelper.crop(4, 1, 32);
 
         JFrame jFrame = new JFrame();
         jFrame.setExtendedState(Frame.MAXIMIZED_BOTH);

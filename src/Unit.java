@@ -24,6 +24,7 @@ public class Unit implements HitboxListener {
         bottom.setAlpha(0);
     }
 
+
     public double getAlpha() {
         return bottom.getAlpha();
     }
