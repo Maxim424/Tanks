@@ -19,14 +19,14 @@ public class Empty {
         x =  (x + Math.cos(alpha) * speed * ms / 1000.0);
         if (x<0) {
             x = 0;
-        } else if (x>camera.getRight() - GamePanel.w/2) {
-            x =  camera.getRight() - GamePanel.w/2;
+        } else if (x>Map.WORLD_SIZE*Map.BLOCK_SIZE - GamePanel.w) {
+            x =  Map.WORLD_SIZE*Map.BLOCK_SIZE - GamePanel.w;
         }
         y =  (y + Math.sin(alpha) * speed * ms / 1000.0);
         if (y<0) {
             y = 0;
-        } else if (y>camera.getBottom()-GamePanel.h/2) {
-            y =  camera.getBottom()-GamePanel.h/2;
+        } else if (y>Map.WORLD_SIZE*Map.BLOCK_SIZE-GamePanel.h) {
+            y =  Map.WORLD_SIZE*Map.BLOCK_SIZE-GamePanel.h;
         }
         if (keyState.keyDown(KeyEvent.VK_S)) {
             down();
