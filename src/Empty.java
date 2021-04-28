@@ -5,26 +5,28 @@ public class Empty {
     private double y;
     private double alpha, speed;
     private KeyState keyState = KeyState.getInstance();
+    private Camera camera;
 
     public Empty(double x, double y) {
         this.x = x;
         this.y = y;
         alpha = 0;
         speed = 0;
+        camera = Camera.getInstance();
     }
 
     public void update(int ms) {
         x =  (x + Math.cos(alpha) * speed * ms / 1000.0);
         if (x<0) {
             x = 0;
-        } else if (x>GamePanel.w) {
-            x =  GamePanel.w;
+        } else if (x>camera.getRight() - GamePanel.w/2) {
+            x =  camera.getRight() - GamePanel.w/2;
         }
         y =  (y + Math.sin(alpha) * speed * ms / 1000.0);
         if (y<0) {
             y = 0;
-        } else if (y>GamePanel.h) {
-            y =  GamePanel.h;
+        } else if (y>camera.getBottom()-GamePanel.h/2) {
+            y =  camera.getBottom()-GamePanel.h/2;
         }
         if (keyState.keyDown(KeyEvent.VK_S)) {
             down();

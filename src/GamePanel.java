@@ -7,7 +7,7 @@ public class GamePanel extends JPanel implements MouseListener {
 
 
     private final Unit player = new Tank(400, 300, "red");
-    private final Empty point = new Empty(0, 0);
+    private final Empty point;
     private final MapEditor mapEditor = MapEditor.getInstance();
     private final Map map = Map.getInstance();
     private final Camera camera = Camera.getInstance();
@@ -19,6 +19,7 @@ public class GamePanel extends JPanel implements MouseListener {
 
     public GamePanel() {
         t1 = System.currentTimeMillis();
+        point = new Empty(0, 0);
     }
 
     private void update () {
