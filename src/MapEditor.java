@@ -8,15 +8,13 @@ import java.io.File;
 
 public class MapEditor implements MouseListener {
 
-    private int w, h;
     private boolean active;
     private int currentBlock = Map.GROUND;
     private int currentObject = Map.GROUND;
-    private int mode;
     private int brush;
-    private int[] shiftArray;
+    private final int[] shiftArray;
     private int elapsedFrameTime;
-    private int tapTime;
+    private final int tapTime;
 
     private BufferedImage dock;
     private BufferedImage brick;
@@ -28,16 +26,13 @@ public class MapEditor implements MouseListener {
     private BufferedImage delete;
     private BufferedImage tick;
 
-    private Map map = Map.getInstance();
-    private Camera camera = Camera.getInstance();
-    private KeyState keyState = KeyState.getInstance();
+    private final Map map = Map.getInstance();
+    private final Camera camera = Camera.getInstance();
+    private final KeyState keyState = KeyState.getInstance();
     private static MapEditor instance = null;
 
-    private MapEditor(int w, int h) {
-        this.w = w;
-        this.h = h;
+    private MapEditor() {
         active = true;
-        mode = 1;
         shiftArray = new int[] {0, 0, 0, 0, 0, 0, 0, 0, 10};
         brush = 7;
         tapTime = 80;
@@ -61,7 +56,7 @@ public class MapEditor implements MouseListener {
 
     public static MapEditor getInstance() {
         if (instance == null) {
-            instance = new MapEditor(1600, 900);
+            instance = new MapEditor();
         }
         return instance;
     }
@@ -144,7 +139,7 @@ public class MapEditor implements MouseListener {
             if(brush<=3) {
                 map.spawnBlock(camera.getWorldX(screenX), camera.getWorldY(screenY), currentBlock );
             }
-            else if (brush>3 && brush<=6) {
+            else if (brush<=6) {
                 map.spawnObject(camera.getWorldX(screenX), camera.getWorldY(screenY), currentObject );
             }
 
