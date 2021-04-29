@@ -24,6 +24,15 @@ public class Unit implements HitboxListener {
         bottom.setAlpha(0);
     }
 
+    public double getCenterX() {
+        return bottom.getX() + Map.BLOCK_SIZE/2;
+    }
+    public double getCenterY() {
+        return bottom.getY() + Map.BLOCK_SIZE/2;
+    }
+    public void setTopAlpha(double alpha) {
+        top.setAlpha(alpha);
+    }
 
     public double getAlpha() {
         return bottom.getAlpha();

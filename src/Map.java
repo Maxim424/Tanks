@@ -4,6 +4,7 @@ import java.util.Random;
 
 public class Map {
 
+
     private static int [][] matrix;
     public static final int WORLD_SIZE = 60;
 
@@ -117,6 +118,10 @@ public class Map {
                 }
             }
         }
+    }
+
+    public void destroyBlock(double x, double y) {
+        instance.spawnBlock(x, y, Map.GROUND);
     }
 
 

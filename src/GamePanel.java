@@ -1,11 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
+import java.awt.event.*;
 import java.rmi.server.UnicastRemoteObject;
 
-public class GamePanel extends JPanel implements MouseListener {
+public class GamePanel extends JPanel implements MouseListener, MouseMotionListener, MouseWheelListener {
 
 
     private final Unit player = new Tank(400, 300, "red");
@@ -35,6 +33,7 @@ public class GamePanel extends JPanel implements MouseListener {
             UnitCollection.update(ms);
             camera.setPosition(player.getX()-getWidth()/2.0-16, player.getY()-getHeight()/2.0-16, getWidth(), getHeight());
         } else {
+            point.update(ms);
             camera.setPosition(point.getX(), point.getY(), getWidth(), getHeight());
         }
 
@@ -63,6 +62,19 @@ public class GamePanel extends JPanel implements MouseListener {
     }
 
     @Override
+    public void mouseMoved(MouseEvent e) {
+        int x = e.getX();
+        int y = e.getY();
+
+        int x2 = camera.getScreenX(player.getCenterX());
+        int y2 = camera.getScreenY(player.getCenterY());
+        int dy = y - y2;
+        int dx = x - x2;
+        double alpha = Math.atan2(dy, dx);
+        player.setTopAlpha(alpha);
+    }
+
+    @Override
     public void mouseClicked(MouseEvent e) {
     }
 
@@ -83,6 +95,16 @@ public class GamePanel extends JPanel implements MouseListener {
 
     @Override
     public void mouseExited(MouseEvent e) {
+
+    }
+
+    @Override
+    public void mouseDragged(MouseEvent mouseEvent) {
+
+    }
+
+    @Override
+    public void mouseWheelMoved(MouseWheelEvent mouseWheelEvent) {
 
     }
 }
