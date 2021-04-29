@@ -35,6 +35,7 @@ public class GamePanel extends JPanel implements MouseListener {
             UnitCollection.update(ms);
             camera.setPosition(player.getX()-getWidth()/2.0-16, player.getY()-getHeight()/2.0-16, getWidth(), getHeight());
         } else {
+            point.update(ms);
             camera.setPosition(point.getX(), point.getY(), getWidth(), getHeight());
         }
 
