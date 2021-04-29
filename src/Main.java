@@ -39,7 +39,6 @@ public class Main {
         jFrame.setMinimumSize(new Dimension(1000, 700));
         jFrame.setVisible(true);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
         jFrame.addKeyListener(KeyState.getInstance());
 
         GamePanel panel = new GamePanel();
