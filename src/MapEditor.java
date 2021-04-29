@@ -35,7 +35,7 @@ public class MapEditor implements MouseListener {
         active = true;
         shiftArray = new int[] {0, 0, 0, 0, 0, 0, 0, 0, 10};
         brush = 7;
-        tapTime = 80;
+        tapTime = 85;
         try {
             dock = ImageIO.read(new File("src/Dock.png"));
             brick = ImageIO.read(new File("src/Brick.png"));
@@ -113,6 +113,13 @@ public class MapEditor implements MouseListener {
 
         if (keyState.keyDown(KeyEvent.VK_ENTER) && brush==7) {
             active = false;
+        }
+
+        if (keyState.keyDown(KeyEvent.VK_X)) {
+            map.loadMatrix();
+        }
+        if (keyState.keyDown(KeyEvent.VK_Z)) {
+            map.saveMatrix();
         }
 
     }

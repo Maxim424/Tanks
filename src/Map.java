@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.io.*;
 import java.util.Random;
 
 public class Map {
@@ -167,6 +168,69 @@ public class Map {
         return cell >> layer * 8;
     }
 
+    public void saveMatrix() {
+        File file = new File(((new File(".").getAbsolutePath())+"MapConfig.txt"));
+        try{
+            if (file.createNewFile()) {
+                System.out.println("File is created!");
+            } else {
+                System.out.println("File already exists.");
+            }
+        }
+        catch (IOException ex){
+            System.out.println(ex.getMessage());
+        }
+
+        try(FileWriter writer = new FileWriter (file)) {
+            int block;
+            for (int i = 0; i < WORLD_SIZE; i++) {
+                for (int j = 0; j < WORLD_SIZE; j++) {
+                    block = get(matrix[i][j], 0);
+                    writer.write(block + " ");
+                }
+                writer.append('\n');
+            }
+            writer.flush();
+            System.out.println("Successfully saved!");
+        }
+        catch (IOException ex){
+            System.out.println("Map saving failed.");
+            System.out.println(ex.getMessage());
+        }
+    }
+
+    public void loadMatrix(){
+        File file = new File(((new File(".").getAbsolutePath())+"MapConfig.txt"));
+        int row=0, col=0;
+        BufferedReader objReader = null;
+        try{
+            char c;
+            String strCurrentLine;
+            objReader = new BufferedReader(new FileReader(file));
+            while (((strCurrentLine = objReader.readLine()) != null)) {
+                for(int i = 0; i < strCurrentLine.length(); i++) {
+                    c = strCurrentLine.charAt(i);
+                    if (c == ' ') col++;
+                    else matrix[row][col] = set(matrix[row][col], 0, (int)c-48);
+                }
+                col=0;
+                row++;
+            }
+            System.out.println("Map loaded!");
+        }
+        catch (IOException ex){
+            System.out.println("Map loading failed.");
+            ex.printStackTrace();
+        }
+        finally {
+            try {
+                if (objReader != null)
+                    objReader.close();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+    }
 
 
 }
