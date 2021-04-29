@@ -11,13 +11,21 @@ public class Bullet extends Unit {
         this.bottom = new Sprite(x, y, 32, 32, alpha, 200 );
         active = true;
         map = Map.getInstance();
+        hb = new Hitbox(bottom, 5, this);
     }
 
     @Override
     public void update(int ms) {
-        super.update(ms);
-        top.setX( bottom.getX() );
-        top.setY( bottom.getY() );
+        if (active) {
+            super.update(ms);
+            top.setX( bottom.getX() );
+            top.setY( bottom.getY() );
+            if (bottom.getX()<=0 || bottom.getY()<=0 || bottom.getY()>=Map.WORLD_SIZE*Map.BLOCK_SIZE ||
+                    bottom.getX()>=Map.WORLD_SIZE*Map.BLOCK_SIZE) {
+                active = false;
+            }
+        }
+
 
     }
 
@@ -32,7 +40,10 @@ public class Bullet extends Unit {
     @Override
     public void onCollision(HitboxEvent event) {
         super.onCollision(event);
-        map.destroyBlock(event.x, event.y);
-        active = false;
+        map.destroyBlock(event.x, event.y, event.block);
+        if (event.block!=Map.WATER) {
+            active = false;
+        }
+
     }
 }

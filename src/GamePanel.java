@@ -58,6 +58,7 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
         mapEditor.paint(g);
 
         addMouseListener(mapEditor);
+        addMouseMotionListener(this);
         repaint();
     }
 
