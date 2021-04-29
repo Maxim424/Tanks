@@ -13,15 +13,19 @@ public class Unit implements HitboxListener {
 
     public void up () {
         bottom.setAlpha(-Math.PI/2);
+        top.setAlpha(-Math.PI/2);
     }
     public void down () {
         bottom.setAlpha(Math.PI/2);
+        top.setAlpha(Math.PI/2);
     }
     public void left () {
         bottom.setAlpha(Math.PI);
+        top.setAlpha(Math.PI);
     }
     public void right () {
         bottom.setAlpha(0);
+        top.setAlpha(0);
     }
 
     public double getCenterX() {
