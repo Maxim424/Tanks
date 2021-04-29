@@ -119,8 +119,11 @@ public class Map {
         }
     }
 
-    public void destroyBlock(double x, double y) {
-        instance.spawnBlock(x, y, Map.GROUND);
+    public void destroyBlock(double x, double y,  int block) {
+        if (block==Map.BRICK) {
+            spawnBlock(x, y, Map.GROUND);
+        }
+
     }
 
 
