@@ -20,6 +20,10 @@ public class Bullet extends Unit {
             super.update(ms);
             top.setX( bottom.getX() );
             top.setY( bottom.getY() );
+            if (bottom.getX()<=0 || bottom.getY()<=0 || bottom.getY()>=Map.WORLD_SIZE*Map.BLOCK_SIZE ||
+                    bottom.getX()>=Map.WORLD_SIZE*Map.BLOCK_SIZE) {
+                active = false;
+            }
         }
 
 
@@ -37,6 +41,9 @@ public class Bullet extends Unit {
     public void onCollision(HitboxEvent event) {
         super.onCollision(event);
         map.destroyBlock(event.x, event.y, event.block);
-        active = false;
+        if (event.block!=Map.WATER) {
+            active = false;
+        }
+
     }
 }
