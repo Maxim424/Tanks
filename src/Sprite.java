@@ -57,7 +57,7 @@ public class Sprite {
 
     public void paint(Graphics g) {
 
-        ImageHelper.paint(g, currentFrame, camera.getScreenX(x), camera.getScreenY(y));
+        ImageHelper.paint(g, currentFrame, camera.getScreenX(x), camera.getScreenY(y), this.alpha);
     }
 
     private void updateXY(int ms) {

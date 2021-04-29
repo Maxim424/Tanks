@@ -1,5 +1,6 @@
 import javax.imageio.ImageIO;
 import java.awt.*;
+import java.awt.geom.AffineTransform;
 import java.awt.image.BufferedImage;
 import java.io.File;
 
@@ -28,6 +29,14 @@ public class ImageHelper {
 
     public static void paint (Graphics g, int block, int screenX, int screenY) {
         g.drawImage( frames[block], screenX, screenY, null );
+    }
+
+    public static void paint (Graphics g, int block, int screenX, int screenY, double rotation) {
+        AffineTransform at = new AffineTransform();
+        at.translate(screenX, screenY);
+        at.rotate(rotation, Map.BLOCK_SIZE/2, Map.BLOCK_SIZE/2);
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.drawImage( frames[block], at, null );
     }
 
 }
