@@ -4,11 +4,13 @@ public class Unit implements HitboxListener {
     protected Sprite bottom;
     protected Sprite top;
     protected Hitbox hb;
+    protected Bot bot;
 
     public Unit(int x, int y) {
         this.bottom = new Sprite(x, y, Map.EMPTY, Map.EMPTY, 0, 0 );
         this.top =  new Sprite(x, y, Map.EMPTY, Map.EMPTY, 0, 0 );
         this.hb = new Hitbox(bottom, 5, this);
+        this.bot = new Bot(this);
     }
 
     public void up () {
@@ -66,13 +68,16 @@ public class Unit implements HitboxListener {
         bottom.update(ms);
         top.update(ms);
         hb.update();
+        bot.update(ms);
     }
     public void paint(Graphics g) {
         bottom.paint(g);
         top.paint(g);
     }
 
-
+    public void setBot(Bot bot) {
+        this.bot = bot;
+    }
 
     @Override
     public void onCollision(HitboxEvent event) {

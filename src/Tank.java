@@ -27,6 +27,7 @@ public class Tank extends Unit {
 
 
         hb = new Hitbox(bottom, 5, this);
+        bot = new TankBot(this);
     }
 
     @Override
@@ -35,25 +36,7 @@ public class Tank extends Unit {
         top.setX( bottom.getX() );
         top.setY( bottom.getY() );
 
-        if (keyState.keyDown(KeyEvent.VK_DOWN) || keyState.keyDown(KeyEvent.VK_S)) {
-            down();
-            setSpeed(50);
-        }
-        else if (keyState.keyDown(KeyEvent.VK_UP) || keyState.keyDown(KeyEvent.VK_W)) {
-            up();
-            setSpeed(50);
-        }
-        else if (keyState.keyDown(KeyEvent.VK_LEFT) || keyState.keyDown(KeyEvent.VK_A)) {
-            left();
-            setSpeed(50);
-        }
-        else if (keyState.keyDown(KeyEvent.VK_RIGHT) || keyState.keyDown(KeyEvent.VK_D)) {
-            right();
-            setSpeed(50);
-        }
-        else {
-            setSpeed(0);
-        }
+
     }
 
     @Override
