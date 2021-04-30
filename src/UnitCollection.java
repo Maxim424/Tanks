@@ -47,6 +47,7 @@ public class UnitCollection {
     public static void update(int ms) {
 
         for (Unit u : list) {
+            u.setSpeed(50);
             u.update(ms);
         }
 

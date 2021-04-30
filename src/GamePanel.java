@@ -20,7 +20,36 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
     public GamePanel() {
         t1 = System.currentTimeMillis();
         point = new Empty(0, 0);
-        UnitCollection.add(player);
+        player.setBot(new Bot(player));
+        for (int i = 0; i < 2; i++) {
+            UnitCollection.spawnTank(8, 8);
+        }
+    }
+
+    private void controlPlayer(int ms){
+        if(!mapEditor.isActive()) {
+            if (keyState.keyDown(KeyEvent.VK_DOWN) || keyState.keyDown(KeyEvent.VK_S)) {
+                player.down();
+                player.setSpeed(55);
+                player.update(15);
+            } else if (keyState.keyDown(KeyEvent.VK_UP) || keyState.keyDown(KeyEvent.VK_W)) {
+                player.up();
+                player.setSpeed(55);
+                player.update(15);
+            } else if (keyState.keyDown(KeyEvent.VK_LEFT) || keyState.keyDown(KeyEvent.VK_A)) {
+                player.left();
+                player.setSpeed(55);
+                player.update(15);
+            } else if (keyState.keyDown(KeyEvent.VK_RIGHT) || keyState.keyDown(KeyEvent.VK_D)) {
+                player.right();
+                player.setSpeed(55);
+                player.update(15);
+            } else {
+                player.setSpeed(0);
+                player.update(15);
+            }
+        }
+        keyState.update();
     }
 
     private void update () {
@@ -42,7 +71,7 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
         keyState.update();
         mapEditor.update(ms);
 
-        if (keyState.keyDown(KeyEvent.VK_Q)) {
+        if (keyState.keyDown(KeyEvent.VK_SPACE)) {
             UnitCollection.spawnBullet(player.getX(), player.getY(), player.top.getAlpha(), ms);
         }
     }
@@ -50,12 +79,15 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-
-        update();
+        int ms = (int) (t2 - t1);
+        controlPlayer(ms);
 
         map.paint(g);
         UnitCollection.paint(g);
+        player.paint(g);
         mapEditor.paint(g);
+
+        update();
 
         addMouseListener(mapEditor);
         addMouseMotionListener(this);

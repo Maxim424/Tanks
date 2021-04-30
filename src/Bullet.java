@@ -17,6 +17,7 @@ public class Bullet extends Unit {
     @Override
     public void update(int ms) {
         if (active) {
+            setSpeed(180);
             super.update(ms);
             top.setX( bottom.getX() );
             top.setY( bottom.getY() );
