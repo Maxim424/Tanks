@@ -17,6 +17,7 @@ public class Menu extends JDialog {
         $$$setupUI$$$();
         setContentPane(contentPane);
         setModal(true);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         NewMapButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -42,7 +43,7 @@ public class Menu extends JDialog {
         AboutButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                JOptionPane.showMessageDialog(null, "Maxim Kuznetsov \nKirill Mazurets \n2020-202x");
             }
         });
     }
