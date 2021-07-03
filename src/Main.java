@@ -3,7 +3,7 @@ import java.awt.*;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main() {
 
         ImageHelper.crop(1, 0, Map.WALL);
         ImageHelper.crop(0, 3, Map.WATER);
@@ -45,6 +45,5 @@ public class Main {
         jFrame.add(panel);
 
         jFrame.revalidate();
-
     }
 }

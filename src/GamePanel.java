@@ -5,7 +5,6 @@ import java.rmi.server.UnicastRemoteObject;
 
 public class GamePanel extends JPanel implements MouseListener, MouseMotionListener, MouseWheelListener {
 
-
     private final Unit player = new Tank(400, 300, "red");
     private final Empty point;
     private final MapEditor mapEditor = MapEditor.getInstance();
@@ -26,8 +25,19 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
         }
     }
 
-    private void controlPlayer(int ms){
-        if(!mapEditor.isActive()) {
+    private void controlPlayer(int ms) {
+        /*if (keyState.keyDown((KeyEvent.VK_ESCAPE))){
+            Menu menu = new Menu();
+            int screenwidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+            int screenheight = Toolkit.getDefaultToolkit().getScreenSize().height;
+            int thisheight = 550;
+            int thiswidth = 400;
+            menu.setLocation((screenwidth - thiswidth) / 2, 50);
+            menu.setSize(thiswidth, thisheight);
+            //Здесь дописать чтобы закрывался JPanel
+            menu.setVisible(true);
+        }*/
+        if (!mapEditor.isActive()) {
             if (keyState.keyDown(KeyEvent.VK_DOWN) || keyState.keyDown(KeyEvent.VK_S)) {
                 player.down();
                 player.setSpeed(55);
@@ -52,7 +62,7 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
         keyState.update();
     }
 
-    private void update () {
+    private void update() {
         w = getWidth();
         h = getHeight();
         t2 = System.currentTimeMillis();
@@ -60,7 +70,7 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
 
         if (!mapEditor.isActive()) {
             UnitCollection.update(ms);
-            camera.setPosition(player.getX()-getWidth()/2.0-16, player.getY()-getHeight()/2.0-16, getWidth(), getHeight());
+            camera.setPosition(player.getX() - getWidth() / 2.0 - 16, player.getY() - getHeight() / 2.0 - 16, getWidth(), getHeight());
         } else {
             point.update(ms);
             camera.setPosition(point.getX(), point.getY(), getWidth(), getHeight());
@@ -137,7 +147,7 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
     }
 
     @Override
-    public void mouseWheelMoved(MouseWheelEvent mouseWheelEvent) {
+    public void mouseWheelMoved(MouseWheelEvent mouseWheelEvent){
 
     }
 }
