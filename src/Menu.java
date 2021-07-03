@@ -22,13 +22,15 @@ public class Menu extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 Main game = new Main();
                 dispose();
-                game.main();
+                game.Main(false);
             }
         });
         LoadMapButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                Main gameloaded = new Main();
+                dispose();
+                gameloaded.Main(true);
             }
         });
         MultiplayerButton.addActionListener(new ActionListener() {

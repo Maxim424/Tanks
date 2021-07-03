@@ -115,15 +115,9 @@ public class MapEditor implements MouseListener {
             active = false;
         }
 
-        if (active) {
-            if (keyState.keyDown(KeyEvent.VK_X)) {
-                map.loadMatrix();
-            }
-            if (keyState.keyDown(KeyEvent.VK_Z)) {
-                map.saveMatrix();
-            }
+        if ((keyState.keyDown(KeyEvent.VK_Z)) && (active)) {
+            map.saveMatrix();
         }
-
     }
 
     public void setActive(boolean active) {

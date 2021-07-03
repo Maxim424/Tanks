@@ -3,7 +3,7 @@ import java.awt.*;
 
 public class Main {
 
-    public static void main() {
+    public static void Main(boolean isLoad) {
 
         ImageHelper.crop(1, 0, Map.WALL);
         ImageHelper.crop(0, 3, Map.WATER);
@@ -44,6 +44,10 @@ public class Main {
         GamePanel panel = new GamePanel();
         jFrame.addKeyListener(panel);
         jFrame.add(panel);
+        if (isLoad){
+            Map tmpmap = Map.getInstance();
+            tmpmap.loadMatrix();
+        }
         jFrame.revalidate();
     }
 }
