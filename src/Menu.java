@@ -23,7 +23,6 @@ public class Menu extends JDialog {
                 Main game = new Main();
                 dispose();
                 game.main();
-
             }
         });
         LoadMapButton.addActionListener(new ActionListener() {

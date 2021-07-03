@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.rmi.server.UnicastRemoteObject;
 
-public class GamePanel extends JPanel implements MouseListener, MouseMotionListener, MouseWheelListener {
+public class GamePanel extends JPanel implements MouseListener, MouseMotionListener, MouseWheelListener, KeyListener {
 
     private final Unit player = new Tank(400, 300, "red");
     private final Empty point;
@@ -26,17 +26,6 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
     }
 
     private void controlPlayer(int ms) {
-        /*if (keyState.keyDown((KeyEvent.VK_ESCAPE))){
-            Menu menu = new Menu();
-            int screenwidth = Toolkit.getDefaultToolkit().getScreenSize().width;
-            int screenheight = Toolkit.getDefaultToolkit().getScreenSize().height;
-            int thisheight = 550;
-            int thiswidth = 400;
-            menu.setLocation((screenwidth - thiswidth) / 2, 50);
-            menu.setSize(thiswidth, thisheight);
-            //Здесь дописать чтобы закрывался JPanel
-            menu.setVisible(true);
-        }*/
         if (!mapEditor.isActive()) {
             if (keyState.keyDown(KeyEvent.VK_DOWN) || keyState.keyDown(KeyEvent.VK_S)) {
                 player.down();
@@ -148,6 +137,33 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
 
     @Override
     public void mouseWheelMoved(MouseWheelEvent mouseWheelEvent){
+
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_ESCAPE){
+            Menu menu = new Menu();
+            int screenwidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+            int screenheight = Toolkit.getDefaultToolkit().getScreenSize().height;
+            int thisheight = 550;
+            int thiswidth = 400;
+            menu.setLocation((screenwidth - thiswidth) / 2, 50);
+            menu.setSize(thiswidth, thisheight);
+            JFrame ancestor = (JFrame) SwingUtilities.getWindowAncestor(this);
+            ancestor.setVisible(false);
+            ancestor.dispose();
+            menu.setVisible(true);
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
 
     }
 }

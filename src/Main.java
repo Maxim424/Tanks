@@ -42,8 +42,8 @@ public class Main {
         jFrame.addKeyListener(KeyState.getInstance());
 
         GamePanel panel = new GamePanel();
+        jFrame.addKeyListener(panel);
         jFrame.add(panel);
-
         jFrame.revalidate();
     }
 }
