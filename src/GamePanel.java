@@ -148,7 +148,6 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ESCAPE){
-            map.createWorld(Map.WORLD_SIZE, Map.WORLD_SIZE);
             Menu menu = new Menu();
             int screenwidth = Toolkit.getDefaultToolkit().getScreenSize().width;
             int screenheight = Toolkit.getDefaultToolkit().getScreenSize().height;

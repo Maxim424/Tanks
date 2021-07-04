@@ -3,7 +3,9 @@ import java.awt.*;
 
 public class Main {
 
-    public static void Main(boolean isLoad) {
+    Map initialased = Map.getInstance();
+
+    public Main() {
 
         ImageHelper.crop(1, 0, Map.WALL);
         ImageHelper.crop(0, 3, Map.WATER);
@@ -44,10 +46,17 @@ public class Main {
         GamePanel panel = new GamePanel();
         jFrame.addKeyListener(panel);
         jFrame.add(panel);
-        if (isLoad){
-            Map tmpmap = Map.getInstance();
-            tmpmap.loadMatrix();
-        }
+
         jFrame.revalidate();
+    }
+
+    public void NewGame(boolean IsReinitialise){
+        if (IsReinitialise){
+            initialased.createWorld(Map.WORLD_SIZE, Map.WORLD_SIZE);
+        }
+    }
+
+    public void LoadGame(){
+        initialased.loadMatrix();
     }
 }
