@@ -20,7 +20,14 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
         t1 = System.currentTimeMillis();
         point = new Empty(0, 0);
         player.setBot(new Bot(player));
-        for (int i = 0; i < 2; i++) {
+    }
+
+    public void activateEditor(){
+        mapEditor.setActive(true);
+    }
+
+    public void createBots(int count){
+        for (int i = 0; i < count; i++) {
             UnitCollection.spawnTank(8, 8);
         }
     }

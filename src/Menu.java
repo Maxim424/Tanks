@@ -23,7 +23,7 @@ public class Menu extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 Main game = new Main();
-                game.NewGame(true);
+                game.NewGame();
             }
         });
         LoadMapButton.addActionListener(new ActionListener() {
@@ -31,7 +31,7 @@ public class Menu extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 Main game = new Main();
-                game.LoadGame();
+                game.LoadGamefromStart();
             }
         });
         MultiplayerButton.addActionListener(new ActionListener() {
