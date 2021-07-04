@@ -114,10 +114,6 @@ public class MapEditor implements MouseListener {
         if (keyState.keyDown(KeyEvent.VK_ENTER) && brush==7) {
             active = false;
         }
-
-        if ((keyState.keyDown(KeyEvent.VK_Z)) && (active)) {
-            map.saveMatrix();
-        }
     }
 
     public void setActive(boolean active) {

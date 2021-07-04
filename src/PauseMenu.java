@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class PauseMenu extends JDialog {
     private JPanel contentPane;
@@ -12,14 +14,39 @@ public class PauseMenu extends JDialog {
     public PauseMenu() {
         setContentPane(contentPane);
         setModal(true);
-        getRootPane().setDefaultButton(buttonOK);
-    }
-
-    public static void main(String[] args) {
-        PauseMenu dialog = new PauseMenu();
-        dialog.pack();
-        dialog.setVisible(true);
-        System.exit(0);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        ContinueButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                Main game = new Main();
+                game.NewGame(false);
+            }
+        });
+        NewMapButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                Main game = new Main();
+                game.NewGame(true);
+            }
+        });
+        LoadMapButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                Main game = new Main();
+                game.LoadGame();
+            }
+        });
+        SaveButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                dispose();
+                Main game = new Main();
+                game.SaveGame();
+            }
+        });
     }
 
     {
@@ -63,7 +90,7 @@ public class PauseMenu extends JDialog {
         contentPane.add(LoadMapButton, new com.intellij.uiDesigner.core.GridConstraints(3, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         SaveButton = new JButton();
         SaveButton.setBackground(new Color(-1474444));
-        SaveButton.setText("Сохранить карту");
+        SaveButton.setText("Сохранить карту и продолжить");
         contentPane.add(SaveButton, new com.intellij.uiDesigner.core.GridConstraints(4, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         ContinueButton = new JButton();
         ContinueButton.setBackground(new Color(-1474444));
@@ -77,4 +104,5 @@ public class PauseMenu extends JDialog {
     public JComponent $$$getRootComponent$$$() {
         return contentPane;
     }
+
 }

@@ -67,7 +67,7 @@
         </constraints>
         <properties>
           <background color="-1474444"/>
-          <text value="Сохранить карту"/>
+          <text value="Сохранить карту и продолжить"/>
         </properties>
       </component>
       <component id="f4581" class="javax.swing.JButton" binding="ContinueButton">

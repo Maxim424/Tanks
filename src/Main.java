@@ -59,4 +59,8 @@ public class Main {
     public void LoadGame(){
         initialased.loadMatrix();
     }
+
+    public void SaveGame(){
+        initialased.saveMatrix();
+    }
 }

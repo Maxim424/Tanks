@@ -148,17 +148,17 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ESCAPE){
-            Menu menu = new Menu();
+            PauseMenu pauseMenu = new PauseMenu();
             int screenwidth = Toolkit.getDefaultToolkit().getScreenSize().width;
             int screenheight = Toolkit.getDefaultToolkit().getScreenSize().height;
             int thisheight = 550;
             int thiswidth = 400;
-            menu.setLocation((screenwidth - thiswidth) / 2, 50);
-            menu.setSize(thiswidth, thisheight);
+            pauseMenu.setLocation((screenwidth - thiswidth) / 2, 50);
+            pauseMenu.setSize(thiswidth, thisheight);
             JFrame ancestor = (JFrame) SwingUtilities.getWindowAncestor(this);
             ancestor.setVisible(false);
             ancestor.dispose();
-            menu.setVisible(true);
+            pauseMenu.setVisible(true);
         }
     }
 
