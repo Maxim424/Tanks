@@ -3,7 +3,10 @@ import java.awt.*;
 
 public class Main {
 
-    public static void main(String[] args) {
+    Map initialased = Map.getInstance();
+    GamePanel panel = new GamePanel();
+
+    public Main() {
 
         ImageHelper.crop(1, 0, Map.WALL);
         ImageHelper.crop(0, 3, Map.WATER);
@@ -41,10 +44,37 @@ public class Main {
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jFrame.addKeyListener(KeyState.getInstance());
 
-        GamePanel panel = new GamePanel();
+
+        jFrame.addKeyListener(panel);
         jFrame.add(panel);
 
         jFrame.revalidate();
+    }
 
+    public void NewGame(){
+        initialased.createWorld(Map.WORLD_SIZE, Map.WORLD_SIZE);
+        panel.createBots(2);
+    }
+
+    public void NewMap(){
+        initialased.createWorld(Map.WORLD_SIZE, Map.WORLD_SIZE);
+        panel.activateEditor();
+    }
+
+    public void ContinueGame(){
+
+    }
+
+    public void LoadGame(){
+        initialased.loadMatrix();
+    }
+
+    public void LoadGamefromStart(){
+        panel.createBots(2);
+        initialased.loadMatrix();
+    }
+
+    public void SaveGame(){
+        initialased.saveMatrix();
     }
 }

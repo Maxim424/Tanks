@@ -3,8 +3,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.rmi.server.UnicastRemoteObject;
 
-public class GamePanel extends JPanel implements MouseListener, MouseMotionListener, MouseWheelListener {
-
+public class GamePanel extends JPanel implements MouseListener, MouseMotionListener, MouseWheelListener, KeyListener {
 
     private final Unit player = new Tank(400, 300, "red");
     private final Empty point;
@@ -21,13 +20,20 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
         t1 = System.currentTimeMillis();
         point = new Empty(0, 0);
         player.setBot(new Bot(player));
-        for (int i = 0; i < 2; i++) {
+    }
+
+    public void activateEditor(){
+        mapEditor.setActive(true);
+    }
+
+    public void createBots(int count){
+        for (int i = 0; i < count; i++) {
             UnitCollection.spawnTank(8, 8);
         }
     }
 
-    private void controlPlayer(int ms){
-        if(!mapEditor.isActive()) {
+    private void controlPlayer(int ms) {
+        if (!mapEditor.isActive()) {
             if (keyState.keyDown(KeyEvent.VK_DOWN) || keyState.keyDown(KeyEvent.VK_S)) {
                 player.down();
                 player.setSpeed(55);
@@ -52,7 +58,7 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
         keyState.update();
     }
 
-    private void update () {
+    private void update() {
         w = getWidth();
         h = getHeight();
         t2 = System.currentTimeMillis();
@@ -60,7 +66,7 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
 
         if (!mapEditor.isActive()) {
             UnitCollection.update(ms);
-            camera.setPosition(player.getX()-getWidth()/2.0-16, player.getY()-getHeight()/2.0-16, getWidth(), getHeight());
+            camera.setPosition(player.getX() - getWidth() / 2.0 - 16, player.getY() - getHeight() / 2.0 - 16, getWidth(), getHeight());
         } else {
             point.update(ms);
             camera.setPosition(point.getX(), point.getY(), getWidth(), getHeight());
@@ -137,7 +143,34 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
     }
 
     @Override
-    public void mouseWheelMoved(MouseWheelEvent mouseWheelEvent) {
+    public void mouseWheelMoved(MouseWheelEvent mouseWheelEvent){
+
+    }
+
+    @Override
+    public void keyTyped(KeyEvent e) {
+
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_ESCAPE){
+            PauseMenu pauseMenu = new PauseMenu();
+            int screenwidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+            int screenheight = Toolkit.getDefaultToolkit().getScreenSize().height;
+            int thisheight = 550;
+            int thiswidth = 400;
+            pauseMenu.setLocation((screenwidth - thiswidth) / 2, 50);
+            pauseMenu.setSize(thiswidth, thisheight);
+            JFrame ancestor = (JFrame) SwingUtilities.getWindowAncestor(this);
+            ancestor.setVisible(false);
+            ancestor.dispose();
+            pauseMenu.setVisible(true);
+        }
+    }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
 
     }
 }
