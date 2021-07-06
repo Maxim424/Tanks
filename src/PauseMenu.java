@@ -36,16 +36,28 @@ public class PauseMenu extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                Main game = new Main();
-                game.LoadGame();
+                LoadMenu loadMenu = new LoadMenu(true);
+                int screenwidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+                int screenheight = Toolkit.getDefaultToolkit().getScreenSize().height;
+                int thisheight = 300;
+                int thiswidth = 1000;
+                loadMenu.setLocation((screenwidth - thiswidth) / 2 + 20, 90);
+                loadMenu.setSize(thiswidth, thisheight);
+                loadMenu.setVisible(true);
             }
         });
         SaveButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                Main game = new Main();
-                game.SaveGame();
+                SaveMenu saveMenu = new SaveMenu(true);
+                int screenwidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+                int screenheight = Toolkit.getDefaultToolkit().getScreenSize().height;
+                int thisheight = 300;
+                int thiswidth = 1080;
+                saveMenu.setLocation((screenwidth - thiswidth) / 2 + 20, 90);
+                saveMenu.setSize(thiswidth, thisheight);
+                saveMenu.setVisible(true);
             }
         });
         ExitButton.addActionListener(new ActionListener() {

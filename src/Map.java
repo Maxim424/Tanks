@@ -176,7 +176,7 @@ public class Map {
         return cell >> layer * 8;
     }
 
-    public void saveMatrix() {
+    public void saveMatrix(int slot) {
         File file = new File(((new File(".").getAbsolutePath())+"MapConfig.txt"));
         try{
             if (file.createNewFile()) {
@@ -207,7 +207,7 @@ public class Map {
         }
     }
 
-    public void loadMatrix(){
+    public void loadMatrix(int slot){
         File file = new File(((new File(".").getAbsolutePath())+"MapConfig.txt"));
         int row=0, col=0;
         BufferedReader objReader = null;

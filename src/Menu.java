@@ -30,8 +30,14 @@ public class Menu extends JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 dispose();
-                Main game = new Main();
-                game.LoadGamefromStart();
+                LoadMenu loadMenu = new LoadMenu(false);
+                int screenwidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+                int screenheight = Toolkit.getDefaultToolkit().getScreenSize().height;
+                int thisheight = 300;
+                int thiswidth = 1000;
+                loadMenu.setLocation((screenwidth - thiswidth) / 2 + 20, 90);
+                loadMenu.setSize(thiswidth, thisheight);
+                loadMenu.setVisible(true);
             }
         });
         MultiplayerButton.addActionListener(new ActionListener() {
