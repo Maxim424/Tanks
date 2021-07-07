@@ -74,7 +74,7 @@ public class Main {
         initialased.loadMatrix(slot);
     }
 
-    public void SaveGame(int slot){
-        initialased.saveMatrix(slot);
+    public void SaveGame(int slot, String name){
+        initialased.saveMatrix(slot, name);
     }
 }

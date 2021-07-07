@@ -17,11 +17,19 @@ public class SaveMenu extends JDialog {
     private JTextField SlotName3;
     private JTextField SlotName2;
     private JTextField SlotName1;
+    Map MapData = Map.getInstance();
 
     public SaveMenu(boolean paused) {
         setContentPane(contentPane);
         setModal(true);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+
+        if (MapData.GetSlotName(1) != null) SlotName1.setText(MapData.GetSlotName(1));
+        if (MapData.GetSlotName(2) != null) SlotName2.setText(MapData.GetSlotName(2));
+        if (MapData.GetSlotName(3) != null) SlotName3.setText(MapData.GetSlotName(3));
+        if (MapData.GetSlotName(4) != null) SlotName4.setText(MapData.GetSlotName(4));
+        if (MapData.GetSlotName(5) != null) SlotName5.setText(MapData.GetSlotName(5));
+
         BackButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -53,7 +61,7 @@ public class SaveMenu extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 Main game = new Main();
-                game.SaveGame(1);
+                game.SaveGame(1, SlotName1.getText());
             }
         });
         Slot2Button.addActionListener(new ActionListener() {
@@ -61,7 +69,7 @@ public class SaveMenu extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 Main game = new Main();
-                game.SaveGame(2);
+                game.SaveGame(2, SlotName2.getText());
             }
         });
         Slot3Button.addActionListener(new ActionListener() {
@@ -69,7 +77,7 @@ public class SaveMenu extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 Main game = new Main();
-                game.SaveGame(3);
+                game.SaveGame(3, SlotName3.getText());
             }
         });
         Slot4Button.addActionListener(new ActionListener() {
@@ -77,7 +85,7 @@ public class SaveMenu extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 Main game = new Main();
-                game.SaveGame(4);
+                game.SaveGame(4, SlotName4.getText());
             }
         });
         Slot5Button.addActionListener(new ActionListener() {
@@ -85,7 +93,7 @@ public class SaveMenu extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 Main game = new Main();
-                game.SaveGame(5);
+                game.SaveGame(5, SlotName5.getText());
             }
         });
     }

@@ -16,11 +16,19 @@ public class LoadMenu extends JDialog {
     private JLabel SlotName4;
     private JLabel SlotName5;
     private JPanel contentPane;
+    Map MapData = Map.getInstance();
 
     public LoadMenu(boolean paused) {
         setContentPane(contentPane);
         setModal(true);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+
+        if (MapData.GetSlotName(1) != null) SlotName1.setText(MapData.GetSlotName(1));
+        if (MapData.GetSlotName(2) != null) SlotName2.setText(MapData.GetSlotName(2));
+        if (MapData.GetSlotName(3) != null) SlotName3.setText(MapData.GetSlotName(3));
+        if (MapData.GetSlotName(4) != null) SlotName4.setText(MapData.GetSlotName(4));
+        if (MapData.GetSlotName(5) != null) SlotName5.setText(MapData.GetSlotName(5));
+
         BackButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -52,7 +60,10 @@ public class LoadMenu extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 Main game = new Main();
-                game.LoadGame(1);
+                if (paused)
+                    game.LoadGame(1);
+                else
+                    game.LoadGamefromStart(1);
             }
         });
         Slot2Button.addActionListener(new ActionListener() {
@@ -60,7 +71,10 @@ public class LoadMenu extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 Main game = new Main();
-                game.LoadGame(2);
+                if (paused)
+                    game.LoadGame(2);
+                else
+                    game.LoadGamefromStart(2);
             }
         });
         Slot3Button.addActionListener(new ActionListener() {
@@ -68,7 +82,10 @@ public class LoadMenu extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 Main game = new Main();
-                game.LoadGame(3);
+                if (paused)
+                    game.LoadGame(3);
+                else
+                    game.LoadGamefromStart(3);
             }
         });
         Slot4Button.addActionListener(new ActionListener() {
@@ -76,7 +93,10 @@ public class LoadMenu extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 Main game = new Main();
-                game.LoadGame(4);
+                if (paused)
+                    game.LoadGame(4);
+                else
+                    game.LoadGamefromStart(4);
             }
         });
         Slot5Button.addActionListener(new ActionListener() {
@@ -84,7 +104,10 @@ public class LoadMenu extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 Main game = new Main();
-                game.LoadGame(5);
+                if (paused)
+                    game.LoadGame(5);
+                else
+                    game.LoadGamefromStart(5);
             }
         });
     }
