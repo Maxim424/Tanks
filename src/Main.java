@@ -65,16 +65,16 @@ public class Main {
 
     }
 
-    public void LoadGame(){
-        initialased.loadMatrix();
+    public void LoadGame(int slot){
+        initialased.loadMatrix(slot);
     }
 
-    public void LoadGamefromStart(){
+    public void LoadGamefromStart(int slot){
         panel.createBots(2);
-        initialased.loadMatrix();
+        initialased.loadMatrix(slot);
     }
 
-    public void SaveGame(){
-        initialased.saveMatrix();
+    public void SaveGame(int slot, String name){
+        initialased.saveMatrix(slot, name);
     }
 }
