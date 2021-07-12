@@ -3,7 +3,6 @@ import java.awt.event.KeyEvent;
 
 public class Bullet extends Unit {
 
-    private boolean active;
     private Map map;
 
     public Bullet(double x, double y, double alpha) {
@@ -28,6 +27,7 @@ public class Bullet extends Unit {
         }
 
 
+
     }
 
     @Override
@@ -42,9 +42,11 @@ public class Bullet extends Unit {
     public void onCollision(HitboxEvent event) {
         super.onCollision(event);
         map.destroyBlock(event.x, event.y, event.block);
-        if (event.block!=Map.WATER) {
+        if (event.block!=Map.WATER && event.type!=HitboxEvent.PLAYER) {
+
             active = false;
         }
+
 
     }
 }

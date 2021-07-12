@@ -20,6 +20,7 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
         t1 = System.currentTimeMillis();
         point = new Empty(0, 0);
         player.setBot(new Bot(player));
+        player.type = HitboxEvent.PLAYER;
     }
 
     public void activateEditor(){
@@ -27,9 +28,11 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
     }
 
     public void createBots(int count){
-        for (int i = 0; i < count; i++) {
+        /*for (int i = 0; i < count; i++) {
             UnitCollection.spawnTank(8, 8);
-        }
+        }*/
+        UnitCollection.spawnTank(8, 8);
+        UnitCollection.spawnTank(10, 8);
     }
 
     private void controlPlayer(int ms) {

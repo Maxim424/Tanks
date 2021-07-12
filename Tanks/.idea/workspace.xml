@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="239cbeb6-c0da-4479-b359-20c73b4794f7" name="Default Changelist" comment="Shooting works great: bullets can fly over the water" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1o3qNQVfxmVDbKUtpYh6A3qSPjb" />
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.SHOW" value="false" />
+    <property name="UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH" value="257" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\mvkuz.MAXIM\Documents\Programs\Java\Tanks\Tanks\src" />
+      <recent name="C:\Users\Student\IdeaProjects\Tanks2" />
+      <recent name="C:\Users\Student\IdeaProjects\Tanks2\src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Test" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="C:\Users\Student\.jdks\corretto-1.8.0_282\jre" />
+      <option name="MAIN_CLASS_NAME" value="Menu" />
+      <module name="Tanks" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="239cbeb6-c0da-4479-b359-20c73b4794f7" name="Default Changelist" comment="" />
+      <created>1612525582191</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1612525582191</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Changes-3">
+      <created>1619629946482</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1619629946482</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Changes-4">
+      <created>1619630577513</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1619630577513</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Changes-5&#10;I deleted Tanks2 file.">
+      <created>1619631822296</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1619631822296</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Работает движение камеры в режиме редактирования">
+      <created>1619721617117</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1619721617117</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Rotation of &quot;top&quot; don't work">
+      <created>1619722848554</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1619722848554</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Rotation of &quot;top&quot; works with rotation of &quot;bottom&quot;">
+      <created>1619723191750</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1619723191750</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Shooting works">
+      <created>1619724198049</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1619724198049</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Shooting works great: bullets can fly over the water">
+      <created>1619724799793</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1619724799793</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Changes-3" />
+    <MESSAGE value="Changes-4" />
+    <MESSAGE value="Changes-5&#10;I deleted Tanks2 file." />
+    <MESSAGE value="Работает движение камеры в режиме редактирования" />
+    <MESSAGE value="Rotation of &quot;top&quot; don't work" />
+    <MESSAGE value="Rotation of &quot;top&quot; works with rotation of &quot;bottom&quot;" />
+    <MESSAGE value="Shooting works" />
+    <MESSAGE value="Shooting works great: bullets can fly over the water" />
+    <option name="LAST_COMMIT_MESSAGE" value="Shooting works great: bullets can fly over the water" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="299" y="42" width="1092" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1625413403300">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="299" y="42" width="1092" height="738" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1600.860@0.0.1600.860" timestamp="1625413403300" />
+    <state x="598" y="126" key="#com.intellij.ide.util.MemberChooser" timestamp="1626098291373">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="598" y="126" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1626098291373" />
+    <state x="630" y="336" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1625413402240">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="630" y="336" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1600.860@0.0.1600.860" timestamp="1625413402240" />
+    <state x="889" y="231" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1619626951827">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="889" y="231" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1600.860@0.0.1600.860" timestamp="1619626951827" />
+    <state x="530" y="177" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1619086495236">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="530" y="177" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.860@0.0.1600.860" timestamp="1619086495236" />
+    <state x="530" y="177" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog" timestamp="1619637405046">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="530" y="177" key="#com.intellij.refactoring.typeMigration.ui.FailedConversionsDialog/0.0.1600.860@0.0.1600.860" timestamp="1619637405046" />
+    <state x="580" y="185" key="FileChooserDialogImpl" timestamp="1626094088462">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="580" y="185" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1626094088462" />
+    <state width="1557" height="148" key="GridCell.Tab.0.bottom" timestamp="1626105215712">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="148" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1626105215712" />
+    <state width="1557" height="148" key="GridCell.Tab.0.center" timestamp="1626105215712">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="148" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1626105215712" />
+    <state width="1557" height="148" key="GridCell.Tab.0.left" timestamp="1626105215712">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="148" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1626105215712" />
+    <state width="1557" height="148" key="GridCell.Tab.0.right" timestamp="1626105215712">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="148" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1626105215712" />
+    <state width="1557" height="276" key="GridCell.Tab.1.bottom" timestamp="1619639265687">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="276" key="GridCell.Tab.1.bottom/0.0.1600.860@0.0.1600.860" timestamp="1619639265687" />
+    <state width="1557" height="276" key="GridCell.Tab.1.center" timestamp="1619639265687">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="276" key="GridCell.Tab.1.center/0.0.1600.860@0.0.1600.860" timestamp="1619639265687" />
+    <state width="1557" height="276" key="GridCell.Tab.1.left" timestamp="1619639265687">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="276" key="GridCell.Tab.1.left/0.0.1600.860@0.0.1600.860" timestamp="1619639265687" />
+    <state width="1557" height="276" key="GridCell.Tab.1.right" timestamp="1619639265687">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state width="1557" height="276" key="GridCell.Tab.1.right/0.0.1600.860@0.0.1600.860" timestamp="1619639265687" />
+    <state x="58" y="9" key="SettingsEditor" timestamp="1625676265362">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="58" y="9" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1625676265362" />
+    <state x="392" y="163" key="Vcs.Push.Dialog.v2" timestamp="1619724807121">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="392" y="163" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1619724807121" />
+    <state x="617" y="344" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1619721487154">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="617" y="344" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.860@0.0.1600.860" timestamp="1619721487154" />
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1619627444040">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1619627444040" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Tanks2$Test.ic" NAME="Test Coverage Results" MODIFIED="1613135346991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>

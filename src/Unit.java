@@ -5,6 +5,8 @@ public class Unit implements HitboxListener {
     protected Sprite top;
     protected Hitbox hb;
     protected Bot bot;
+    public int type;
+    public boolean active;
 
     public Unit(int x, int y) {
         this.bottom = new Sprite(x, y, Map.EMPTY, Map.EMPTY, 0, 0 );

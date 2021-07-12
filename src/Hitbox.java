@@ -16,6 +16,7 @@ public class Hitbox {
 
     public void update () {
         checkMapCollision();
+        checkUnitCollision();
     }
 
     private void checkMapCollision() {
@@ -36,7 +37,7 @@ public class Hitbox {
                         event.block = block;
                         event.x = p.x;
                         event.y = p.y;
-
+                        event.type = HitboxEvent.BLOCK;
                         listener.onCollision(event);
                     }
                     return;
@@ -44,6 +45,26 @@ public class Hitbox {
             }
         }
         return;
+    }
+
+    private void checkUnitCollision() {
+        Point[] points = getCornerPoints();
+        Rectangle r = new Rectangle((int)points[0].getX(), (int)points[0].getY(), (int)(points[2].getX()-points[0].getX()), (int)(points[2].getY()-points[0].getY()));
+        for (Unit curUnit : UnitCollection.list) {
+            if (UnitCollection.list.indexOf(curUnit) == UnitCollection.list.indexOf(listener)) {
+                continue;
+            } else {
+                Point[] points2 = curUnit.hb.getCornerPoints();
+                Rectangle r2 = new Rectangle((int)points2[0].getX(), (int)points2[0].getY(), (int)(points2[2].getX()-points2[0].getX()), (int)(points2[2].getY()-points2[0].getY()));
+                if (r.intersects(r2)) {
+                    HitboxEvent event = new HitboxEvent();
+                    event.type = curUnit.type;
+
+                    listener.onCollision(event);
+                }
+            }
+
+        }
     }
 
 

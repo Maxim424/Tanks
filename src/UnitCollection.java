@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class UnitCollection {
 
-    private static ArrayList <Unit> list = new ArrayList<>(100);
-    private final static int shootTime = 150;
+    public static ArrayList <Unit> list = new ArrayList<>(100);
+    private final static int shootTime = 200;
     private static int elapsedTime;
 
     public static void add (Unit t) {
@@ -28,6 +28,7 @@ public class UnitCollection {
         else {
             t = new Tank(c * Map.BLOCK_SIZE, r * Map.BLOCK_SIZE, "red");
         }
+        t.setSpeed(100);
         list.add(t);
 
     }
@@ -39,6 +40,8 @@ public class UnitCollection {
             elapsedTime = 0;
             Unit t;
             t = new Bullet(x, y, alpha);
+            t.setSpeed(500);
+            t.type = HitboxEvent.BULLET_RED_TEAM;
             list.add(t);
         }
 
@@ -47,8 +50,11 @@ public class UnitCollection {
     public static void update(int ms) {
 
         for (Unit u : list) {
-            u.setSpeed(50);
             u.update(ms);
+            if (u.active==false && System.currentTimeMillis()%1000<=100) {
+                u.hb.body.setX(0);
+                u.hb.body.setY(0);
+            }
         }
 
     }
