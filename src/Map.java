@@ -119,6 +119,50 @@ public class Map {
                 }
             }
         }
+
+        spawnBlock(Map.BLOCK_SIZE*3, Map.BLOCK_SIZE*13, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*4, Map.BLOCK_SIZE*13, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*5, Map.BLOCK_SIZE*13, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*3, Map.BLOCK_SIZE*12, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*4, Map.BLOCK_SIZE*12, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*5, Map.BLOCK_SIZE*12, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*3, Map.BLOCK_SIZE*11, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*4, Map.BLOCK_SIZE*11, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*5, Map.BLOCK_SIZE*11, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*6, Map.BLOCK_SIZE*11, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*7, Map.BLOCK_SIZE*11, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*5, Map.BLOCK_SIZE*10, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*6, Map.BLOCK_SIZE*10, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*7, Map.BLOCK_SIZE*10, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*5, Map.BLOCK_SIZE*9, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*6, Map.BLOCK_SIZE*9, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*7, Map.BLOCK_SIZE*9, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*8, Map.BLOCK_SIZE*9, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*9, Map.BLOCK_SIZE*9, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*7, Map.BLOCK_SIZE*8, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*8, Map.BLOCK_SIZE*8, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*9, Map.BLOCK_SIZE*8, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*7, Map.BLOCK_SIZE*7, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*8, Map.BLOCK_SIZE*7, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*9, Map.BLOCK_SIZE*7, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*10, Map.BLOCK_SIZE*7, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*11, Map.BLOCK_SIZE*7, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*9, Map.BLOCK_SIZE*6, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*10, Map.BLOCK_SIZE*6, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*11, Map.BLOCK_SIZE*6, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*9, Map.BLOCK_SIZE*5, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*10, Map.BLOCK_SIZE*5, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*11, Map.BLOCK_SIZE*5, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*12, Map.BLOCK_SIZE*5, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*13, Map.BLOCK_SIZE*5, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*11, Map.BLOCK_SIZE*4, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*12, Map.BLOCK_SIZE*4, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*13, Map.BLOCK_SIZE*4, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*11, Map.BLOCK_SIZE*3, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*12, Map.BLOCK_SIZE*3, Map.GROUND);
+        spawnBlock(Map.BLOCK_SIZE*13, Map.BLOCK_SIZE*3, Map.GROUND);
+
+
     }
 
     public void destroyBlock(double x, double y,  int block) {

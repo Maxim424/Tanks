@@ -20,13 +20,13 @@ public class UnitCollection {
         return list.get(1);
     }
 
-    public static void spawnTank (int c, int r) {
+    public static void spawnTank (int c, int r, int type) {
         Unit t;
-        if (list.size() == 1) {
-            t = new Tank(c * Map.BLOCK_SIZE, r * Map.BLOCK_SIZE, "blue");
+        if (type == HitboxEvent.TANK_RED_TEAM) {
+            t = new Tank(c * Map.BLOCK_SIZE, r * Map.BLOCK_SIZE, "red");
         }
         else {
-            t = new Tank(c * Map.BLOCK_SIZE, r * Map.BLOCK_SIZE, "red");
+            t = new Tank(c * Map.BLOCK_SIZE, r * Map.BLOCK_SIZE, "blue");
         }
         t.setSpeed(100);
         list.add(t);

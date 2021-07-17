@@ -5,7 +5,7 @@ import java.rmi.server.UnicastRemoteObject;
 
 public class GamePanel extends JPanel implements MouseListener, MouseMotionListener, MouseWheelListener, KeyListener {
 
-    private final Unit player = new Tank(400, 300, "red");
+    private final Unit player;
     private final Empty point;
     private final MapEditor mapEditor = MapEditor.getInstance();
     private final Map map = Map.getInstance();
@@ -19,6 +19,8 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
     public GamePanel() {
         t1 = System.currentTimeMillis();
         point = new Empty(0, 0);
+        player = new Tank(Map.BLOCK_SIZE*8, Map.BLOCK_SIZE*8, "red");
+
         player.setBot(new Bot(player));
         player.type = HitboxEvent.PLAYER;
     }
@@ -28,11 +30,11 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
     }
 
     public void createBots(int count){
-        /*for (int i = 0; i < count; i++) {
-            UnitCollection.spawnTank(8, 8);
-        }*/
-        UnitCollection.spawnTank(8, 8);
-        UnitCollection.spawnTank(10, 8);
+        UnitCollection.spawnTank(12, 4, HitboxEvent.TANK_RED_TEAM);
+        UnitCollection.spawnTank(10, 6, HitboxEvent.TANK_RED_TEAM);
+        UnitCollection.spawnTank(6, 10, HitboxEvent.TANK_RED_TEAM);
+        UnitCollection.spawnTank(4, 12, HitboxEvent.TANK_RED_TEAM);
+
     }
 
     private void controlPlayer(int ms) {
@@ -62,6 +64,7 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
     }
 
     private void update() {
+
         w = getWidth();
         h = getHeight();
         t2 = System.currentTimeMillis();
