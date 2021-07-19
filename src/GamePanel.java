@@ -35,6 +35,12 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
         UnitCollection.spawnTank(6, 10, HitboxEvent.TANK_RED_TEAM);
         UnitCollection.spawnTank(4, 12, HitboxEvent.TANK_RED_TEAM);
 
+        UnitCollection.spawnTank(Map.WORLD_SIZE - 12, Map.WORLD_SIZE - 4, HitboxEvent.TANK_BLUE_TEAM);
+        UnitCollection.spawnTank(Map.WORLD_SIZE - 10, Map.WORLD_SIZE - 6, HitboxEvent.TANK_BLUE_TEAM);
+        UnitCollection.spawnTank(Map.WORLD_SIZE - 8, Map.WORLD_SIZE - 8, HitboxEvent.TANK_BLUE_TEAM);
+        UnitCollection.spawnTank(Map.WORLD_SIZE - 6, Map.WORLD_SIZE - 10, HitboxEvent.TANK_BLUE_TEAM);
+        UnitCollection.spawnTank(Map.WORLD_SIZE - 4, Map.WORLD_SIZE - 12, HitboxEvent.TANK_BLUE_TEAM);
+
     }
 
     private void controlPlayer(int ms) {
