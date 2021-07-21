@@ -53,7 +53,7 @@ public class Main {
 
     public void NewGame(){
         initialased.createWorld(Map.WORLD_SIZE, Map.WORLD_SIZE);
-        panel.createBots(2);
+        panel.createBots();
     }
 
     public void NewMap(){
@@ -70,7 +70,7 @@ public class Main {
     }
 
     public void LoadGamefromStart(int slot){
-        panel.createBots(2);
+        panel.createBots();
         initialased.loadMatrix(slot);
     }
 

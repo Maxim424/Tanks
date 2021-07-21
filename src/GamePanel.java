@@ -29,7 +29,7 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
         mapEditor.setActive(true);
     }
 
-    public void createBots(int count){
+    public void createBots(){
         UnitCollection.spawnTank(12, 4, HitboxEvent.TANK_RED_TEAM);
         UnitCollection.spawnTank(10, 6, HitboxEvent.TANK_RED_TEAM);
         UnitCollection.spawnTank(6, 10, HitboxEvent.TANK_RED_TEAM);
@@ -78,6 +78,26 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
 
         if (!mapEditor.isActive()) {
             UnitCollection.update(ms);
+
+            /*for (Unit u : UnitCollection.list) {
+                if (u.type==HitboxEvent.TANK_RED_TEAM && System.currentTimeMillis()%1000<=100) {
+                    UnitCollection.spawnBullet(u);
+                    break;
+                }
+            }*/
+
+            if (System.currentTimeMillis()%3000<=100) {
+                UnitCollection.spawnBullet(UnitCollection.list.get(0));
+                UnitCollection.spawnBullet(UnitCollection.list.get(1));
+                UnitCollection.spawnBullet(UnitCollection.list.get(2));
+                UnitCollection.spawnBullet(UnitCollection.list.get(3));
+                UnitCollection.spawnBullet(UnitCollection.list.get(4));
+                UnitCollection.spawnBullet(UnitCollection.list.get(5));
+                UnitCollection.spawnBullet(UnitCollection.list.get(6));
+                UnitCollection.spawnBullet(UnitCollection.list.get(7));
+                UnitCollection.spawnBullet(UnitCollection.list.get(8));
+            }
+
             camera.setPosition(player.getX() - getWidth() / 2.0 - 16, player.getY() - getHeight() / 2.0 - 16, getWidth(), getHeight());
         } else {
             point.update(ms);

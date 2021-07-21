@@ -1,6 +1,6 @@
 public class Bot implements HitboxListener {
 
-    Unit unit;
+    protected Unit unit;
 
     public Bot (Unit u) {
         this.unit = u;

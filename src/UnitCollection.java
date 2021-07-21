@@ -24,9 +24,12 @@ public class UnitCollection {
         Unit t;
         if (type == HitboxEvent.TANK_RED_TEAM) {
             t = new Tank(c * Map.BLOCK_SIZE, r * Map.BLOCK_SIZE, "red");
+            t.type = HitboxEvent.TANK_RED_TEAM;
+
         }
         else {
             t = new Tank(c * Map.BLOCK_SIZE, r * Map.BLOCK_SIZE, "blue");
+            t.type = HitboxEvent.TANK_BLUE_TEAM;
         }
         t.setSpeed(100);
         list.add(t);
@@ -44,6 +47,23 @@ public class UnitCollection {
             t.type = HitboxEvent.BULLET_RED_TEAM;
             list.add(t);
         }
+
+    }
+
+    public static void spawnBullet (Unit unit) {
+        double x = unit.getX();
+        double y = unit.getY();
+        double alpha = unit.top.getAlpha();
+        Unit t;
+        t = new Bullet(x, y, alpha);
+        t.setSpeed(500);
+        if (unit.type == HitboxEvent.TANK_RED_TEAM) {
+            t.type = HitboxEvent.TANK_RED_TEAM;
+        }
+        else {
+            t.type = HitboxEvent.TANK_BLUE_TEAM;
+        }
+        list.add(t);
 
     }
 

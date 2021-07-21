@@ -20,8 +20,8 @@ public class Bullet extends Unit {
             super.update(ms);
             top.setX( bottom.getX() );
             top.setY( bottom.getY() );
-            if (bottom.getX()<=0 || bottom.getY()<=0 || bottom.getY()>=Map.WORLD_SIZE*Map.BLOCK_SIZE ||
-                    bottom.getX()>=Map.WORLD_SIZE*Map.BLOCK_SIZE) {
+            if (bottom.getX()<=0 || bottom.getY()<=0 || bottom.getY()>=Map.WORLD_SIZE*(Map.BLOCK_SIZE-1) ||
+                    bottom.getX()>=Map.WORLD_SIZE*(Map.BLOCK_SIZE-1)) {
                 active = false;
             }
         }
@@ -42,7 +42,7 @@ public class Bullet extends Unit {
     public void onCollision(HitboxEvent event) {
         super.onCollision(event);
         map.destroyBlock(event.x, event.y, event.block);
-        if (event.block!=Map.WATER && event.type!=HitboxEvent.PLAYER) {
+        if (event.block!=Map.WATER && event.type!=HitboxEvent.PLAYER && !(type==HitboxEvent.BULLET_BLUE_TEAM && event.type==HitboxEvent.TANK_BLUE_TEAM) && !(type==HitboxEvent.BULLET_RED_TEAM && event.type==HitboxEvent.TANK_RED_TEAM)) {
 
             active = false;
         }

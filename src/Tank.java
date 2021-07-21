@@ -55,8 +55,7 @@ public class Tank extends Unit {
     @Override
     public void onCollision(HitboxEvent event) {
         super.onCollision(event);
-        if ((event.type==HitboxEvent.BULLET_RED_TEAM || event.type==HitboxEvent.BULLET_BLUE_TEAM) && type!=HitboxEvent.PLAYER) {
-
+        if ((event.type==HitboxEvent.BULLET_RED_TEAM || event.type==HitboxEvent.BULLET_BLUE_TEAM) && type!=HitboxEvent.PLAYER && !(type == HitboxEvent.TANK_RED_TEAM && event.type==HitboxEvent.BULLET_RED_TEAM) && !(type == HitboxEvent.TANK_BLUE_TEAM && event.type==HitboxEvent.BULLET_BLUE_TEAM)) {
             active = false;
         }
 
