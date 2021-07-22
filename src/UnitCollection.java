@@ -58,10 +58,10 @@ public class UnitCollection {
         t = new Bullet(x, y, alpha);
         t.setSpeed(500);
         if (unit.type == HitboxEvent.TANK_RED_TEAM) {
-            t.type = HitboxEvent.TANK_RED_TEAM;
+            t.type = HitboxEvent.BULLET_RED_TEAM;
         }
         else {
-            t.type = HitboxEvent.TANK_BLUE_TEAM;
+            t.type = HitboxEvent.BULLET_BLUE_TEAM;
         }
         list.add(t);
 

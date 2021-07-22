@@ -23,6 +23,7 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
 
         player.setBot(new Bot(player));
         player.type = HitboxEvent.PLAYER;
+        player.setSpeed(100);
     }
 
     public void activateEditor(){
@@ -47,19 +48,19 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
         if (!mapEditor.isActive()) {
             if (keyState.keyDown(KeyEvent.VK_DOWN) || keyState.keyDown(KeyEvent.VK_S)) {
                 player.down();
-                player.setSpeed(55);
+                player.setSpeed(100);
                 player.update(15);
             } else if (keyState.keyDown(KeyEvent.VK_UP) || keyState.keyDown(KeyEvent.VK_W)) {
                 player.up();
-                player.setSpeed(55);
+                player.setSpeed(100);
                 player.update(15);
             } else if (keyState.keyDown(KeyEvent.VK_LEFT) || keyState.keyDown(KeyEvent.VK_A)) {
                 player.left();
-                player.setSpeed(55);
+                player.setSpeed(100);
                 player.update(15);
             } else if (keyState.keyDown(KeyEvent.VK_RIGHT) || keyState.keyDown(KeyEvent.VK_D)) {
                 player.right();
-                player.setSpeed(55);
+                player.setSpeed(100);
                 player.update(15);
             } else {
                 player.setSpeed(0);
@@ -86,17 +87,93 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
                 }
             }*/
 
-            if (System.currentTimeMillis()%3000<=100) {
-                UnitCollection.spawnBullet(UnitCollection.list.get(0));
-                UnitCollection.spawnBullet(UnitCollection.list.get(1));
-                UnitCollection.spawnBullet(UnitCollection.list.get(2));
-                UnitCollection.spawnBullet(UnitCollection.list.get(3));
-                UnitCollection.spawnBullet(UnitCollection.list.get(4));
-                UnitCollection.spawnBullet(UnitCollection.list.get(5));
-                UnitCollection.spawnBullet(UnitCollection.list.get(6));
-                UnitCollection.spawnBullet(UnitCollection.list.get(7));
-                UnitCollection.spawnBullet(UnitCollection.list.get(8));
+            if (System.currentTimeMillis()%3000<=50) {
+                if (UnitCollection.list.get(0).active) {
+                    UnitCollection.spawnBullet(UnitCollection.list.get(0));
+                }
+                if (UnitCollection.list.get(1).active) {
+                    UnitCollection.spawnBullet(UnitCollection.list.get(1));
+                }
+                if (UnitCollection.list.get(2).active) {
+                    UnitCollection.spawnBullet(UnitCollection.list.get(2));
+                }
+                if (UnitCollection.list.get(3).active) {
+                    UnitCollection.spawnBullet(UnitCollection.list.get(3));
+                }
+                if (UnitCollection.list.get(4).active) {
+                    UnitCollection.spawnBullet(UnitCollection.list.get(0));
+                }
+                if (UnitCollection.list.get(5).active) {
+                    UnitCollection.spawnBullet(UnitCollection.list.get(5));
+                }
+                if (UnitCollection.list.get(6).active) {
+                    UnitCollection.spawnBullet(UnitCollection.list.get(6));
+                }
+                if (UnitCollection.list.get(7).active) {
+                    UnitCollection.spawnBullet(UnitCollection.list.get(7));
+                }
+                if (UnitCollection.list.get(8).active) {
+                    UnitCollection.spawnBullet(UnitCollection.list.get(8));
+                }
             }
+            if (System.currentTimeMillis()%2000<=50) {
+                if (UnitCollection.list.get(0).active) {
+                    int rnd = (int)(Math.random()*5 + 4);
+                    if (UnitCollection.list.get(rnd).active) {
+                        UnitCollection.list.get(0).bot.target = UnitCollection.list.get(rnd);
+                    }
+
+                }
+                if (UnitCollection.list.get(1).active) {
+                    int rnd = (int)(Math.random()*5 + 4);
+                    if (UnitCollection.list.get(rnd).active) {
+                        UnitCollection.list.get(1).bot.target = UnitCollection.list.get(rnd);
+                    }
+                }
+                if (UnitCollection.list.get(2).active) {
+                    int rnd = (int)(Math.random()*5 + 4);
+                    if (UnitCollection.list.get(rnd).active) {
+                        UnitCollection.list.get(2).bot.target = UnitCollection.list.get(rnd);
+                    }
+                }
+                if (UnitCollection.list.get(3).active) {
+                    int rnd = (int)(Math.random()*5 + 4);
+                    if (UnitCollection.list.get(rnd).active) {
+                        UnitCollection.list.get(3).bot.target = UnitCollection.list.get(rnd);
+                    }
+                }
+                if (UnitCollection.list.get(4).active) {
+                    int rnd = (int)(Math.random()*4);
+                    if (UnitCollection.list.get(rnd).active) {
+                        UnitCollection.list.get(4).bot.target = UnitCollection.list.get(rnd);
+                    }
+                }
+                if (UnitCollection.list.get(5).active) {
+                    int rnd = (int)(Math.random()*4);
+                    if (UnitCollection.list.get(rnd).active) {
+                        UnitCollection.list.get(5).bot.target = UnitCollection.list.get(rnd);
+                    }
+                }
+                if (UnitCollection.list.get(6).active) {
+                    int rnd = (int)(Math.random()*4);
+                    if (UnitCollection.list.get(rnd).active) {
+                        UnitCollection.list.get(6).bot.target = UnitCollection.list.get(rnd);
+                    }
+                }
+                if (UnitCollection.list.get(7).active) {
+                    int rnd = (int)(Math.random()*4);
+                    if (UnitCollection.list.get(rnd).active) {
+                        UnitCollection.list.get(7).bot.target = UnitCollection.list.get(rnd);
+                    }
+                }
+                if (UnitCollection.list.get(8).active) {
+                    int rnd = (int)(Math.random()*4);
+                    if (UnitCollection.list.get(rnd).active) {
+                        UnitCollection.list.get(8).bot.target = UnitCollection.list.get(rnd);
+                    }
+                }
+            }
+
 
             camera.setPosition(player.getX() - getWidth() / 2.0 - 16, player.getY() - getHeight() / 2.0 - 16, getWidth(), getHeight());
         } else {

@@ -5,7 +5,7 @@ public class TankBot extends Bot {
     private int  timeToShoot                    = 0;
     private int  elapsedTimeToShoot             = 0;
 
-    private Unit target;
+
 
     public TankBot(Unit u) {
         super(u);
@@ -65,7 +65,7 @@ public class TankBot extends Bot {
     public void update(int ms) {
         super.update(ms);
 
-        target = UnitCollection.getTarget(unit);
+        //target = UnitCollection.getTarget(unit);
 
         elapsedTimeToChangeOrientation += ms;
         elapsedTimeToShoot +=ms;
