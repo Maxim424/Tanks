@@ -12,6 +12,8 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
     private final Camera camera = Camera.getInstance();
     private KeyState keyState = KeyState.getInstance();
 
+    public static boolean endgame;
+
     private long t1, t2;
     public static int w;
     public static int h;
@@ -24,6 +26,7 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
         player.setBot(new Bot(player));
         player.type = HitboxEvent.PLAYER;
         player.setSpeed(100);
+        endgame = false;
     }
 
     public void activateEditor(){
@@ -79,13 +82,6 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
 
         if (!mapEditor.isActive()) {
             UnitCollection.update(ms);
-
-            /*for (Unit u : UnitCollection.list) {
-                if (u.type==HitboxEvent.TANK_RED_TEAM && System.currentTimeMillis()%1000<=100) {
-                    UnitCollection.spawnBullet(u);
-                    break;
-                }
-            }*/
 
             if (System.currentTimeMillis()%3000<=50) {
                 if (UnitCollection.list.get(0).active) {
@@ -176,9 +172,13 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
 
 
             camera.setPosition(player.getX() - getWidth() / 2.0 - 16, player.getY() - getHeight() / 2.0 - 16, getWidth(), getHeight());
-        } else {
+        } else{
             point.update(ms);
             camera.setPosition(point.getX(), point.getY(), getWidth(), getHeight());
+        }
+
+        if (!player.active) {
+            endgame = true;
         }
 
 
@@ -201,8 +201,18 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
         UnitCollection.paint(g);
         player.paint(g);
         mapEditor.paint(g);
+        if (!endgame) {
+            update();
+        }
+        else {
+            g.setColor(Color.RED);
+            g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 50));
+            g.drawString("Your tank has been destroyed.", w/2 - 200, h/2);
+            g.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 22));
+            g.drawString("Press [esc] to exit to the main menu.", w/2 - 100, h/2 + 60);
+        }
 
-        update();
+
 
         addMouseListener(mapEditor);
         addMouseMotionListener(this);
@@ -264,17 +274,33 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ESCAPE){
-            PauseMenu pauseMenu = new PauseMenu();
-            int screenwidth = Toolkit.getDefaultToolkit().getScreenSize().width;
-            int screenheight = Toolkit.getDefaultToolkit().getScreenSize().height;
-            int thisheight = 550;
-            int thiswidth = 400;
-            pauseMenu.setLocation((screenwidth - thiswidth) / 2, 50);
-            pauseMenu.setSize(thiswidth, thisheight);
-            JFrame ancestor = (JFrame) SwingUtilities.getWindowAncestor(this);
-            ancestor.setVisible(false);
-            ancestor.dispose();
-            pauseMenu.setVisible(true);
+            if (!endgame) {
+                PauseMenu pauseMenu = new PauseMenu();
+                int screenwidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+                int screenheight = Toolkit.getDefaultToolkit().getScreenSize().height;
+                int thisheight = 550;
+                int thiswidth = 400;
+                pauseMenu.setLocation((screenwidth - thiswidth) / 2, 50);
+                pauseMenu.setSize(thiswidth, thisheight);
+                JFrame ancestor = (JFrame) SwingUtilities.getWindowAncestor(this);
+                ancestor.setVisible(false);
+                ancestor.dispose();
+                pauseMenu.setVisible(true);
+            }
+            else {
+                Menu menu = new Menu();
+                int screenwidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+                int screenheight = Toolkit.getDefaultToolkit().getScreenSize().height;
+                int thisheight = 550;
+                int thiswidth = 400;
+                menu.setLocation((screenwidth - thiswidth) / 2, 50);
+                menu.setSize(thiswidth, thisheight);
+                JFrame ancestor = (JFrame) SwingUtilities.getWindowAncestor(this);
+                ancestor.setVisible(false);
+                ancestor.dispose();
+                menu.setVisible(true);
+                UnitCollection.list.clear();
+            }
         }
     }
 

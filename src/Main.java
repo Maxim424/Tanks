@@ -54,6 +54,9 @@ public class Main {
     public void NewGame(){
         initialased.createWorld(Map.WORLD_SIZE, Map.WORLD_SIZE);
         panel.createBots();
+        GamePanel.endgame = false;
+        MapEditor mapEditor = MapEditor.getInstance();
+        mapEditor.setActive(true);
     }
 
     public void NewMap(){
