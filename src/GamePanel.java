@@ -24,7 +24,7 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
         player = new Tank(Map.BLOCK_SIZE*8, Map.BLOCK_SIZE*8, "red");
 
         player.setBot(new Bot(player));
-        player.type = HitboxEvent.PLAYER;
+        player.type = HitboxEvent.TANK_RED_TEAM;
         player.setSpeed(100);
         endgame = false;
     }
@@ -299,7 +299,7 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
                 ancestor.setVisible(false);
                 ancestor.dispose();
                 menu.setVisible(true);
-                UnitCollection.list.clear();
+
             }
         }
     }

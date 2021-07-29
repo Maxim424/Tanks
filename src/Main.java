@@ -39,7 +39,7 @@ public class Main {
 
         JFrame jFrame = new JFrame();
         jFrame.setExtendedState(Frame.MAXIMIZED_BOTH);
-        jFrame.setMinimumSize(new Dimension(1000, 700));
+        jFrame.setMinimumSize(new Dimension(720, 405 ));
         jFrame.setVisible(true);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jFrame.addKeyListener(KeyState.getInstance());
@@ -52,6 +52,7 @@ public class Main {
     }
 
     public void NewGame(){
+        UnitCollection.list.clear();
         initialased.createWorld(Map.WORLD_SIZE, Map.WORLD_SIZE);
         panel.createBots();
         GamePanel.endgame = false;
@@ -73,8 +74,10 @@ public class Main {
     }
 
     public void LoadGamefromStart(int slot){
+        UnitCollection.list.clear();
         panel.createBots();
         initialased.loadMatrix(slot);
+        GamePanel.endgame = false;
     }
 
     public void SaveGame(int slot, String name){
