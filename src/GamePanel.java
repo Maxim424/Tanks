@@ -97,6 +97,15 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
         if (!player.active) {
             endgame = true;
         }
+        int cnt = 0;
+        for (int i = 4; i<=8; i++) {
+            if (!UnitCollection.list.get(i).active) {
+                cnt++;
+            }
+        }
+        if (cnt == 5) {
+            endgame = true;
+        }
         keyState.update();
         mapEditor.update(ms);
         controlPlayer(ms);
@@ -116,8 +125,16 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
         else {
 
             if (player.active) {
-
-
+                try {
+                    g.drawImage(ImageIO.read(new File("src/YouWon.png")), w/2 - 360, h/2 - 202, null);
+                }
+                catch (Exception e) {
+                    g.setColor(Color.GREEN);
+                    g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 50));
+                    g.drawString("You just won the battle", w/2 - 200, h/2);
+                    g.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 22));
+                    g.drawString("Press [esc] to exit to the main menu", w/2 - 100, h/2 + 60);
+                }
             }
             else {
                 try {
@@ -126,9 +143,9 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
                 catch (Exception e) {
                     g.setColor(Color.RED);
                     g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 50));
-                    g.drawString("Your tank has been destroyed.", w/2 - 200, h/2);
+                    g.drawString("Your tank has been destroyed", w/2 - 200, h/2);
                     g.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 22));
-                    g.drawString("Press [esc] to exit to the main menu.", w/2 - 100, h/2 + 60);
+                    g.drawString("Press [esc] to exit to the main menu", w/2 - 100, h/2 + 60);
                 }
             }
         }
