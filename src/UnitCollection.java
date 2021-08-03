@@ -20,6 +20,98 @@ public class UnitCollection {
         return list.get(1);
     }
 
+    public static void setTarget() {
+        if (System.currentTimeMillis()%2000<=50) {
+            if (UnitCollection.list.get(0).active) {
+                int rnd = (int)(Math.random()*5 + 4);
+                if (UnitCollection.list.get(rnd).active) {
+                    UnitCollection.list.get(0).bot.target = UnitCollection.list.get(rnd);
+                }
+
+            }
+            if (UnitCollection.list.get(1).active) {
+                int rnd = (int)(Math.random()*5 + 4);
+                if (UnitCollection.list.get(rnd).active) {
+                    UnitCollection.list.get(1).bot.target = UnitCollection.list.get(rnd);
+                }
+            }
+            if (UnitCollection.list.get(2).active) {
+                int rnd = (int)(Math.random()*5 + 4);
+                if (UnitCollection.list.get(rnd).active) {
+                    UnitCollection.list.get(2).bot.target = UnitCollection.list.get(rnd);
+                }
+            }
+            if (UnitCollection.list.get(3).active) {
+                int rnd = (int)(Math.random()*5 + 4);
+                if (UnitCollection.list.get(rnd).active) {
+                    UnitCollection.list.get(3).bot.target = UnitCollection.list.get(rnd);
+                }
+            }
+            if (UnitCollection.list.get(4).active) {
+                int rnd = (int)(Math.random()*4);
+                if (UnitCollection.list.get(rnd).active) {
+                    UnitCollection.list.get(4).bot.target = UnitCollection.list.get(rnd);
+                }
+            }
+            if (UnitCollection.list.get(5).active) {
+                int rnd = (int)(Math.random()*4);
+                if (UnitCollection.list.get(rnd).active) {
+                    UnitCollection.list.get(5).bot.target = UnitCollection.list.get(rnd);
+                }
+            }
+            if (UnitCollection.list.get(6).active) {
+                int rnd = (int)(Math.random()*4);
+                if (UnitCollection.list.get(rnd).active) {
+                    UnitCollection.list.get(6).bot.target = UnitCollection.list.get(rnd);
+                }
+            }
+            if (UnitCollection.list.get(7).active) {
+                int rnd = (int)(Math.random()*4);
+                if (UnitCollection.list.get(rnd).active) {
+                    UnitCollection.list.get(7).bot.target = UnitCollection.list.get(rnd);
+                }
+            }
+            if (UnitCollection.list.get(8).active) {
+                int rnd = (int)(Math.random()*4);
+                if (UnitCollection.list.get(rnd).active) {
+                    UnitCollection.list.get(8).bot.target = UnitCollection.list.get(rnd);
+                }
+            }
+        }
+    }
+
+    public static void spawnBullets() {
+        if (System.currentTimeMillis()%3000<=50) {
+            if (UnitCollection.list.get(0).active) {
+                UnitCollection.spawnBullet(UnitCollection.list.get(0));
+            }
+            if (UnitCollection.list.get(1).active) {
+                UnitCollection.spawnBullet(UnitCollection.list.get(1));
+            }
+            if (UnitCollection.list.get(2).active) {
+                UnitCollection.spawnBullet(UnitCollection.list.get(2));
+            }
+            if (UnitCollection.list.get(3).active) {
+                UnitCollection.spawnBullet(UnitCollection.list.get(3));
+            }
+            if (UnitCollection.list.get(4).active) {
+                UnitCollection.spawnBullet(UnitCollection.list.get(0));
+            }
+            if (UnitCollection.list.get(5).active) {
+                UnitCollection.spawnBullet(UnitCollection.list.get(5));
+            }
+            if (UnitCollection.list.get(6).active) {
+                UnitCollection.spawnBullet(UnitCollection.list.get(6));
+            }
+            if (UnitCollection.list.get(7).active) {
+                UnitCollection.spawnBullet(UnitCollection.list.get(7));
+            }
+            if (UnitCollection.list.get(8).active) {
+                UnitCollection.spawnBullet(UnitCollection.list.get(8));
+            }
+        }
+    }
+
     public static void spawnTank (int c, int r, int type) {
         Unit t;
         if (type == HitboxEvent.TANK_RED_TEAM) {

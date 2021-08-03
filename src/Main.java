@@ -39,7 +39,9 @@ public class Main {
 
         JFrame jFrame = new JFrame();
         jFrame.setExtendedState(Frame.MAXIMIZED_BOTH);
-        jFrame.setMinimumSize(new Dimension(720, 405 ));
+        jFrame.setUndecorated(true);
+        jFrame.setMaximumSize(new Dimension(1920, 1920));
+        jFrame.setMinimumSize(new Dimension(720, 405));
         jFrame.setVisible(true);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jFrame.addKeyListener(KeyState.getInstance());
@@ -56,12 +58,14 @@ public class Main {
         initialased.createWorld(Map.WORLD_SIZE, Map.WORLD_SIZE);
         panel.createBots();
         GamePanel.endgame = false;
+        GamePanel.isthisfree = true;
         MapEditor mapEditor = MapEditor.getInstance();
         mapEditor.setActive(true);
     }
 
     public void NewMap(){
         initialased.createWorld(Map.WORLD_SIZE, Map.WORLD_SIZE);
+        GamePanel.isthisfree = true;
         panel.activateEditor();
     }
 
@@ -71,6 +75,7 @@ public class Main {
 
     public void LoadGame(int slot){
         initialased.loadMatrix(slot);
+        GamePanel.isthisfree = true;
     }
 
     public void LoadGamefromStart(int slot){
@@ -78,9 +83,24 @@ public class Main {
         panel.createBots();
         initialased.loadMatrix(slot);
         GamePanel.endgame = false;
+        GamePanel.isthisfree = true;
+    }
+
+    public void LoadLevel(int slot){
+        initialased.loadMatrixLevel(slot);
+        GamePanel.isthisfree = false;
+    }
+
+    public void LoadLevelfromStart(int slot){
+        UnitCollection.list.clear();
+        panel.createBots();
+        initialased.loadMatrixLevel(slot);
+        GamePanel.endgame = false;
+        GamePanel.isthisfree = false;
     }
 
     public void SaveGame(int slot, String name){
         initialased.saveMatrix(slot, name);
+        GamePanel.isthisfree = true;
     }
 }
