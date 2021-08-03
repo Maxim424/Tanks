@@ -12,6 +12,7 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
     private KeyState keyState = KeyState.getInstance();
 
     public static boolean endgame;
+    public static boolean isthisfree;
 
     private long t1, t2;
     public static int w;
@@ -274,17 +275,32 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ESCAPE){
             if (!endgame) {
-                PauseFreeMenu pauseFreeMenu = new PauseFreeMenu();
-                int screenwidth = Toolkit.getDefaultToolkit().getScreenSize().width;
-                int screenheight = Toolkit.getDefaultToolkit().getScreenSize().height;
-                int thisheight = 550;
-                int thiswidth = 400;
-                pauseFreeMenu.setLocation((screenwidth - thiswidth) / 2, 50);
-                pauseFreeMenu.setSize(thiswidth, thisheight);
-                JFrame ancestor = (JFrame) SwingUtilities.getWindowAncestor(this);
-                ancestor.setVisible(false);
-                ancestor.dispose();
-                pauseFreeMenu.setVisible(true);
+                if (isthisfree) {
+                    PauseFreeMenu pauseFreeMenu = new PauseFreeMenu();
+                    int screenwidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+                    int screenheight = Toolkit.getDefaultToolkit().getScreenSize().height;
+                    int thisheight = 550;
+                    int thiswidth = 400;
+                    pauseFreeMenu.setLocation((screenwidth - thiswidth) / 2, 50);
+                    pauseFreeMenu.setSize(thiswidth, thisheight);
+                    JFrame ancestor = (JFrame) SwingUtilities.getWindowAncestor(this);
+                    ancestor.setVisible(false);
+                    ancestor.dispose();
+                    pauseFreeMenu.setVisible(true);
+                }
+                else{
+                    PauseLevelMenu pauseLevelMenu = new PauseLevelMenu();
+                    int screenwidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+                    int screenheight = Toolkit.getDefaultToolkit().getScreenSize().height;
+                    int thisheight = 400;
+                    int thiswidth = 300;
+                    pauseLevelMenu.setLocation((screenwidth - thiswidth) / 2, 50);
+                    pauseLevelMenu.setSize(thiswidth, thisheight);
+                    JFrame ancestor = (JFrame) SwingUtilities.getWindowAncestor(this);
+                    ancestor.setVisible(false);
+                    ancestor.dispose();
+                    pauseLevelMenu.setVisible(true);
+                }
             }
             else {
                 Menu menu = new Menu();
