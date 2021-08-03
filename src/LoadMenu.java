@@ -34,14 +34,14 @@ public class LoadMenu extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 if (paused) {
                     dispose();
-                    PauseMenu pauseMenu = new PauseMenu();
+                    PauseFreeMenu pauseFreeMenu = new PauseFreeMenu();
                     int screenwidth = Toolkit.getDefaultToolkit().getScreenSize().width;
                     int screenheight = Toolkit.getDefaultToolkit().getScreenSize().height;
                     int thisheight = 550;
                     int thiswidth = 400;
-                    pauseMenu.setLocation((screenwidth - thiswidth) / 2, 50);
-                    pauseMenu.setSize(thiswidth, thisheight);
-                    pauseMenu.setVisible(true);
+                    pauseFreeMenu.setLocation((screenwidth - thiswidth) / 2, 50);
+                    pauseFreeMenu.setSize(thiswidth, thisheight);
+                    pauseFreeMenu.setVisible(true);
                 } else {
                     dispose();
                     Menu menu = new Menu();

@@ -35,14 +35,14 @@ public class SaveMenu extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 if (paused) {
                     dispose();
-                    PauseMenu pauseMenu = new PauseMenu();
+                    PauseFreeMenu pauseFreeMenu = new PauseFreeMenu();
                     int screenwidth = Toolkit.getDefaultToolkit().getScreenSize().width;
                     int screenheight = Toolkit.getDefaultToolkit().getScreenSize().height;
                     int thisheight = 550;
                     int thiswidth = 400;
-                    pauseMenu.setLocation((screenwidth - thiswidth) / 2, 50);
-                    pauseMenu.setSize(thiswidth, thisheight);
-                    pauseMenu.setVisible(true);
+                    pauseFreeMenu.setLocation((screenwidth - thiswidth) / 2, 50);
+                    pauseFreeMenu.setSize(thiswidth, thisheight);
+                    pauseFreeMenu.setVisible(true);
                 } else {
                     dispose();
                     Menu menu = new Menu();
@@ -115,6 +115,7 @@ public class SaveMenu extends JDialog {
     private void $$$setupUI$$$() {
         contentPane = new JPanel();
         contentPane.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(1, 1, new Insets(0, 0, 0, 0), -1, -1));
+        contentPane.setBackground(new Color(-1382436));
         final JPanel panel1 = new JPanel();
         panel1.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(4, 9, new Insets(10, 10, 10, 10), -1, -1));
         panel1.setBackground(new Color(-1382436));
@@ -257,4 +258,5 @@ public class SaveMenu extends JDialog {
     public JComponent $$$getRootComponent$$$() {
         return contentPane;
     }
+
 }

@@ -359,5 +359,41 @@ public class Map {
         }
     }
 
+    public void loadMatrixLevel(int slot){
+        File file = new File(((new File(".").getAbsolutePath())+"Level" + slot + "Config.txt"));
+        if(file.exists()) {
+            int row = 0, col = 0;
+            BufferedReader objReader = null;
+            try {
+                char c;
+                String strCurrentLine;
+                objReader = new BufferedReader(new FileReader(file));
+                objReader.readLine();
+                while ((strCurrentLine = objReader.readLine()) != null) {
+                    for (int i = 0; i < strCurrentLine.length(); i++) {
+                        c = strCurrentLine.charAt(i);
+                        if (c == ' ') col++;
+                        else matrix[row][col] = set(matrix[row][col], 0, (int) c - 48);
+                    }
+                    col = 0;
+                    row++;
+                }
+                System.out.println("Map loaded!");
+            } catch (IOException ex) {
+                System.out.println("Map loading failed.");
+                ex.printStackTrace();
+            } finally {
+                try {
+                    if (objReader != null)
+                        objReader.close();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Ошибка");
+        }
+    }
 
 }

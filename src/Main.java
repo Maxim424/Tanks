@@ -80,6 +80,17 @@ public class Main {
         GamePanel.endgame = false;
     }
 
+    public void LoadLevel(int slot){
+        initialased.loadMatrixLevel(slot);
+    }
+
+    public void LoadLevelfromStart(int slot){
+        UnitCollection.list.clear();
+        panel.createBots();
+        initialased.loadMatrixLevel(slot);
+        GamePanel.endgame = false;
+    }
+
     public void SaveGame(int slot, String name){
         initialased.saveMatrix(slot, name);
     }

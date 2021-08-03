@@ -3,7 +3,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class PauseMenu extends JDialog {
+public class  PauseFreeMenu extends JDialog {
     private JPanel contentPane;
     private JButton NewMapButton;
     private JButton LoadMapButton;
@@ -12,7 +12,7 @@ public class PauseMenu extends JDialog {
     private JButton ExitButton;
     private JButton buttonOK;
 
-    public PauseMenu() {
+    public PauseFreeMenu() {
         setContentPane(contentPane);
         setModal(true);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -94,14 +94,14 @@ public class PauseMenu extends JDialog {
         final JLabel label1 = new JLabel();
         label1.setBackground(new Color(-7434870));
         label1.setForeground(new Color(-7434870));
-        label1.setText("Главное меню");
+        label1.setText("Пауза");
         contentPane.add(label1, new com.intellij.uiDesigner.core.GridConstraints(0, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         final JPanel panel2 = new JPanel();
         panel2.setLayout(new com.intellij.uiDesigner.core.GridLayoutManager(1, 1, new Insets(0, 0, 0, 0), -1, -1));
         contentPane.add(panel2, new com.intellij.uiDesigner.core.GridConstraints(0, 2, 7, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
         NewMapButton = new JButton();
         NewMapButton.setBackground(new Color(-1474444));
-        NewMapButton.setText("Новая карта");
+        NewMapButton.setText("Новая игра");
         contentPane.add(NewMapButton, new com.intellij.uiDesigner.core.GridConstraints(2, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         LoadMapButton = new JButton();
         LoadMapButton.setBackground(new Color(-1474444));
