@@ -22,7 +22,7 @@ public class ImageHelper {
 
     public static void crop(int row, int col, int code) {
         if (texture == null) {
-            loadTexture("sprite.png");
+            loadTexture("images/sprite.png");
         }
         frames [code ] = texture.getSubimage(col * Map.BLOCK_SIZE, row * Map.BLOCK_SIZE, Map.BLOCK_SIZE, Map.BLOCK_SIZE);
     }

@@ -126,7 +126,7 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
 
             if (player.active) {
                 try {
-                    g.drawImage(ImageIO.read(new File("src/YouWon.png")), w/2 - 360, h/2 - 202, null);
+                    g.drawImage(ImageIO.read(new File("images/YouWon.png")), w/2 - 360, h/2 - 202, null);
                 }
                 catch (Exception e) {
                     g.setColor(Color.GREEN);
@@ -138,7 +138,7 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
             }
             else {
                 try {
-                    g.drawImage(ImageIO.read(new File("src/GameOver.png")), w/2 - 360, h/2 - 202, null);
+                    g.drawImage(ImageIO.read(new File("images/GameOver.png")), w/2 - 360, h/2 - 202, null);
                 }
                 catch (Exception e) {
                     g.setColor(Color.RED);

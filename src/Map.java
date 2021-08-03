@@ -265,7 +265,7 @@ public class Map {
     }
 
     public void saveMatrix(int slot, String name) {
-        File file = new File(((new File(".").getAbsolutePath())+"MapConfig" + slot + ".txt"));
+        File file = new File(("configs/.MapConfig" + slot + ".txt"));
         try{
             if (file.createNewFile()) {
                 System.out.println("File is created!");
@@ -298,7 +298,7 @@ public class Map {
     }
 
     public String GetSlotName(int slot){
-        File file = new File(((new File(".").getAbsolutePath())+"MapConfig" + slot + ".txt"));
+        File file = new File(("configs/.MapConfig" + slot + ".txt"));
         if(file.exists()){
             BufferedReader objReader = null;
             try {
@@ -323,7 +323,7 @@ public class Map {
     }
 
     public void loadMatrix(int slot){
-        File file = new File(((new File(".").getAbsolutePath())+"MapConfig" + slot + ".txt"));
+        File file = new File(("configs/.MapConfig" + slot + ".txt"));
         if(file.exists()) {
             int row = 0, col = 0;
             BufferedReader objReader = null;
@@ -360,7 +360,7 @@ public class Map {
     }
 
     public void loadMatrixLevel(int slot){
-        File file = new File(((new File(".").getAbsolutePath())+"Level" + slot + "Config.txt"));
+        File file = new File(("configs/.Level" + slot + "Config.txt"));
         if(file.exists()) {
             int row = 0, col = 0;
             BufferedReader objReader = null;

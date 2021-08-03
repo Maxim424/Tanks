@@ -37,15 +37,15 @@ public class MapEditor implements MouseListener {
         brush = 7;
         tapTime = 85;
         try {
-            dock = ImageIO.read(new File("src/Dock.png"));
-            brick = ImageIO.read(new File("src/Brick.png"));
-            wall = ImageIO.read(new File("src/Wall.png"));
-            ground = ImageIO.read(new File("src/Ground.png"));
-            water = ImageIO.read(new File("src/Water.png"));
-            bullet = ImageIO.read(new File("src/Bullet.png"));
-            bullet_3 = ImageIO.read(new File("src/Bullet_3.png"));
-            delete = ImageIO.read(new File("src/Delete.png"));
-            tick = ImageIO.read(new File("src/Tick.png"));
+            dock = ImageIO.read(new File("images/Dock.png"));
+            brick = ImageIO.read(new File("images/Brick.png"));
+            wall = ImageIO.read(new File("images/Wall.png"));
+            ground = ImageIO.read(new File("images/Ground.png"));
+            water = ImageIO.read(new File("images/Water.png"));
+            bullet = ImageIO.read(new File("images/Bullet.png"));
+            bullet_3 = ImageIO.read(new File("images/Bullet_3.png"));
+            delete = ImageIO.read(new File("images/Delete.png"));
+            tick = ImageIO.read(new File("images/Tick.png"));
         }
         catch (Exception e) {
             System.out.println("Файл не загружен ");
