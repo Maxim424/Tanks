@@ -64,13 +64,9 @@ public class TankBot extends Bot {
     @Override
     public void update(int ms) {
         super.update(ms);
-
-        //target = UnitCollection.getTarget(unit);
-
         elapsedTimeToChangeOrientation += ms;
         elapsedTimeToShoot +=ms;
         if (elapsedTimeToChangeOrientation >= timeToChangeOrientation) {
-
             if (Math.random() < 0.8) {
                 changeOrientation2();
             }
@@ -78,19 +74,10 @@ public class TankBot extends Bot {
                 changeOrientation();
 
             }
-
             timeToChangeOrientation = (int)(Math.random() * 2000 + 1500);
             elapsedTimeToChangeOrientation = 0;
-
-
         }
-        /*if (elapsedTimeToShoot >= timeToShoot) {
-            UnitCollection.spawnBullet(unit);
-            timeToShoot = (int)(Math.random() * 2000 + 1500);
-            elapsedTimeToShoot = 0;
-        }*/
         rotateGun();
-
     }
 
     private void changeOrientation() {

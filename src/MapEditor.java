@@ -141,8 +141,6 @@ public class MapEditor implements MouseListener {
             else if (brush<=6) {
                 map.spawnObject(camera.getWorldX(screenX), camera.getWorldY(screenY), currentObject );
             }
-
-
         }
 
     }

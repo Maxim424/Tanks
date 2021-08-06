@@ -71,9 +71,9 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
                 player.setSpeed(0);
                 player.update(ms);
             }
-            if (keyState.keyDown(KeyEvent.VK_SPACE)) {
-                UnitCollection.spawnBullet(player.getX(), player.getY(), player.top.getAlpha(), ms);
-            }
+            /*if (keyState.keyDown(KeyEvent.VK_SPACE)) {
+                UnitCollection.spawnBullet(player);
+            }*/
         }
         keyState.update();
     }
@@ -150,8 +150,6 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
             }
         }
 
-
-
         addMouseListener(mapEditor);
         addMouseMotionListener(this);
         repaint();
@@ -176,7 +174,6 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
 
     @Override
     public void mousePressed(MouseEvent e) {
-
     }
 
     @Override
@@ -254,6 +251,9 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
                 menu.setVisible(true);
 
             }
+        }
+        if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+            UnitCollection.spawnBullet(player);
         }
     }
 

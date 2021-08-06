@@ -163,7 +163,7 @@ public class UnitCollection {
 
         for (Unit u : list) {
             u.update(ms);
-            if (u.active==false && System.currentTimeMillis()%1000<=100) {
+            if (!u.active && System.currentTimeMillis()%1000<=100) {
                 u.hb.body.setX(0);
                 u.hb.body.setY(0);
             }
