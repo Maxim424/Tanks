@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.io.File;
 
-public class GamePanel extends JPanel implements MouseListener, MouseMotionListener, MouseWheelListener, KeyListener {
+public class GamePanel extends JPanel implements MouseListener, MouseMotionListener, KeyListener {
 
     private final Unit player;
     private final Empty point;
@@ -29,6 +29,8 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
         player.type = HitboxEvent.TANK_RED_TEAM;
         player.setSpeed(100);
         endgame = false;
+
+
     }
 
     public void activateEditor(){
@@ -71,9 +73,6 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
                 player.setSpeed(0);
                 player.update(ms);
             }
-            /*if (keyState.keyDown(KeyEvent.VK_SPACE)) {
-                UnitCollection.spawnBullet(player);
-            }*/
         }
         keyState.update();
     }
@@ -174,6 +173,7 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
 
     @Override
     public void mousePressed(MouseEvent e) {
+
     }
 
     @Override
@@ -196,10 +196,6 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
 
     }
 
-    @Override
-    public void mouseWheelMoved(MouseWheelEvent mouseWheelEvent){
-
-    }
 
     @Override
     public void keyTyped(KeyEvent e) {

@@ -34,8 +34,16 @@ public class Main {
         // 31 Синяя башня
         ImageHelper.crop(3, 2, 31);
 
-        // 32 Пуля башня
+        // 32 Пуля
         ImageHelper.crop(4, 1, 32);
+
+        // 33 - 42 Взрыв
+        for (int i = 4; i<=8; i++) {
+            ImageHelper.crop(8, i, 33 + i - 4);
+        }
+        for (int i = 4; i<=8; i++) {
+            ImageHelper.crop(9, i, 38 + i - 4);
+        }
 
         JFrame jFrame = new JFrame();
         jFrame.setExtendedState(Frame.MAXIMIZED_BOTH);
@@ -44,10 +52,10 @@ public class Main {
         jFrame.setMinimumSize(new Dimension(720, 405));
         jFrame.setVisible(true);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
         jFrame.addKeyListener(KeyState.getInstance());
-
-
         jFrame.addKeyListener(panel);
+        jFrame.addMouseListener(panel);
         jFrame.add(panel);
 
         jFrame.revalidate();
