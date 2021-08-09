@@ -2,8 +2,8 @@ import java.awt.*;
 
 public class Hitbox {
 
-    private int [] blackList = {Map.BRICK, Map.WATER, Map.WALL};
-    private int padding;
+    private final int [] blackList = {Map.BRICK, Map.WATER, Map.WALL};
+    private final int padding;
     Sprite body;
     HitboxListener listener;
     Map map = Map.getInstance();

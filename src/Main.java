@@ -3,8 +3,8 @@ import java.awt.*;
 
 public class Main {
 
-    Map initialased = Map.getInstance();
-    GamePanel panel = new GamePanel();
+    private final Map initialized = Map.getInstance();
+    private final GamePanel panel = new GamePanel();
 
     public Main() {
 
@@ -63,7 +63,7 @@ public class Main {
 
     public void NewGame(){
         UnitCollection.list.clear();
-        initialased.createWorld(Map.WORLD_SIZE, Map.WORLD_SIZE);
+        initialized.createWorld(Map.WORLD_SIZE, Map.WORLD_SIZE);
         panel.createBots();
         GamePanel.endgame = false;
         GamePanel.isthisfree = true;
@@ -72,7 +72,7 @@ public class Main {
     }
 
     public void NewMap(){
-        initialased.createWorld(Map.WORLD_SIZE, Map.WORLD_SIZE);
+        initialized.createWorld(Map.WORLD_SIZE, Map.WORLD_SIZE);
         GamePanel.isthisfree = true;
         panel.activateEditor();
     }
@@ -82,33 +82,33 @@ public class Main {
     }
 
     public void LoadGame(int slot){
-        initialased.loadMatrix(slot);
+        initialized.loadMatrix(slot);
         GamePanel.isthisfree = true;
     }
 
     public void LoadGamefromStart(int slot){
         UnitCollection.list.clear();
         panel.createBots();
-        initialased.loadMatrix(slot);
+        initialized.loadMatrix(slot);
         GamePanel.endgame = false;
         GamePanel.isthisfree = true;
     }
 
     public void LoadLevel(int slot){
-        initialased.loadMatrixLevel(slot);
+        initialized.loadMatrixLevel(slot);
         GamePanel.isthisfree = false;
     }
 
     public void LoadLevelfromStart(int slot){
         UnitCollection.list.clear();
         panel.createBots();
-        initialased.loadMatrixLevel(slot);
+        initialized.loadMatrixLevel(slot);
         GamePanel.endgame = false;
         GamePanel.isthisfree = false;
     }
 
     public void SaveGame(int slot, String name){
-        initialased.saveMatrix(slot, name);
+        initialized.saveMatrix(slot, name);
         GamePanel.isthisfree = true;
     }
 }

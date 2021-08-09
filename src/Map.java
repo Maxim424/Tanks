@@ -5,25 +5,21 @@ import java.util.Random;
 
 public class Map {
 
+    public static final int WORLD_SIZE   = 60;
+    public static final int BLOCK_SIZE   = 32;
+    public static final int BLOCK_LAYER  = 0;
+    public static final int OBJECT_LAYER = 1;
+    public static final int EMPTY        = 0;
+    public static final int GROUND       = 1;
+    public static final int WATER        = 2;
+    public static final int BRICK        = 3;
+    public static final int WALL         = 4;
+    public static final int BULLET_1     = 5;
+    public static final int BULLET_3     = 6;
 
     private static int [][] matrix;
-    public static final int WORLD_SIZE = 60;
-
-    public static final int EMPTY  = 0;
-    public static final int BLOCK_SIZE = 32;
-
-    public static final int BLOCK_LAYER = 0;
-    public static final int GROUND = 1;
-    public static final int WATER  = 2;
-    public static final int BRICK  = 3;
-    public static final int WALL   = 4;
-
-    public static final int OBJECT_LAYER = 1;
-    public static final int BULLET_1   = 5;
-    public static final int BULLET_3   = 6;
-
-    private static Random r = new Random();
-    private Camera camera = Camera.getInstance();
+    private static final Random r = new Random();
+    private final Camera camera = Camera.getInstance();
     private static Map instance = null;
 
     private Map() {
@@ -35,23 +31,6 @@ public class Map {
             instance = new Map();
         }
         return instance;
-    }
-
-    public int getBlock (int r, int c) {
-        return get(matrix[r][c], BLOCK_LAYER);
-    }
-
-    public void spawnBlock (double xW, double yW , int block) {
-
-        int row = getRowByY(yW);
-        int col = getColByX(xW);
-        matrix[row][col] = set(matrix[row][col], BLOCK_LAYER, block);
-    }
-
-    public void spawnObject (double xW, double yW , int object) {
-        int row = getRowByY(yW);
-        int col = getColByX(xW);
-        matrix[row][col] = set(matrix[row][col], OBJECT_LAYER, object);
     }
 
     public void createWorld (int rows, int cols) {
@@ -208,19 +187,24 @@ public class Map {
 
     }
 
+    public void spawnObject (double xW, double yW , int object) {
+        int row = getRowByY(yW);
+        int col = getColByX(xW);
+        matrix[row][col] = set(matrix[row][col], OBJECT_LAYER, object);
+    }
+
+    public void spawnBlock (double xW, double yW , int block) {
+
+        int row = getRowByY(yW);
+        int col = getColByX(xW);
+        matrix[row][col] = set(matrix[row][col], BLOCK_LAYER, block);
+    }
+
     public void destroyBlock(double x, double y,  int block) {
         if (block==Map.BRICK) {
             spawnBlock(x, y, Map.GROUND);
         }
 
-    }
-
-
-    public int getColByX (double X) {
-        return (int)X / BLOCK_SIZE;
-    }
-    public int getRowByY (double Y) {
-        return (int)Y / BLOCK_SIZE;
     }
 
     public void paint (Graphics g) {
@@ -244,24 +228,6 @@ public class Map {
             }
         }
 
-    }
-
-    public int  clear (int cell, int layer) {
-        int mask = 255 << layer * 8;
-        mask = ~mask;
-        return cell & mask;
-    }
-
-    public int set (int cell, int layer, int code) {
-        cell = clear(cell, layer);
-        int mask = code << layer * 8;
-        return cell | mask;
-    }
-
-    public int get (int cell, int layer) {
-        int mask = 255 << layer * 8;
-        cell = cell & mask;
-        return cell >> layer * 8;
     }
 
     public void saveMatrix(int slot, String name) {
@@ -294,31 +260,6 @@ public class Map {
         catch (IOException ex){
             System.out.println("Map saving failed.");
             System.out.println(ex.getMessage());
-        }
-    }
-
-    public String GetSlotName(int slot){
-        File file = new File(("configs/.MapConfig" + slot + ".txt"));
-        if(file.exists()){
-            BufferedReader objReader = null;
-            try {
-                objReader = new BufferedReader(new FileReader(file));
-                return objReader.readLine();
-            } catch(IOException ex){
-                System.out.println("Getting map name failed.");
-                ex.printStackTrace();
-                return null;
-            } finally {
-                try {
-                    if (objReader != null)
-                        objReader.close();
-                } catch (IOException ex) {
-                    ex.printStackTrace();
-                }
-            }
-        }
-        else{
-            return null;
         }
     }
 
@@ -396,4 +337,58 @@ public class Map {
         }
     }
 
+    public int  clear (int cell, int layer) {
+        int mask = 255 << layer * 8;
+        mask = ~mask;
+        return cell & mask;
+    }
+
+    public int set (int cell, int layer, int code) {
+        cell = clear(cell, layer);
+        int mask = code << layer * 8;
+        return cell | mask;
+    }
+
+    public int get (int cell, int layer) {
+        int mask = 255 << layer * 8;
+        cell = cell & mask;
+        return cell >> layer * 8;
+    }
+
+    public String GetSlotName(int slot){
+        File file = new File(("configs/.MapConfig" + slot + ".txt"));
+        if(file.exists()){
+            BufferedReader objReader = null;
+            try {
+                objReader = new BufferedReader(new FileReader(file));
+                return objReader.readLine();
+            } catch(IOException ex){
+                System.out.println("Getting map name failed.");
+                ex.printStackTrace();
+                return null;
+            } finally {
+                try {
+                    if (objReader != null)
+                        objReader.close();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+        }
+        else{
+            return null;
+        }
+    }
+
+    public int getBlock (int r, int c) {
+        return get(matrix[r][c], BLOCK_LAYER);
+    }
+
+    public int getColByX (double X) {
+        return (int)X / BLOCK_SIZE;
+    }
+
+    public int getRowByY (double Y) {
+        return (int)Y / BLOCK_SIZE;
+    }
 }

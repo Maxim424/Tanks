@@ -11,7 +11,6 @@ public class ImageHelper {
 
     private static void loadTexture(String fileName) {
         File f = new File(fileName);
-
         try {
             texture = ImageIO.read(f);
         } catch (Exception e) {
@@ -34,7 +33,7 @@ public class ImageHelper {
     public static void paint (Graphics g, int block, int screenX, int screenY, double rotation) {
         AffineTransform at = new AffineTransform();
         at.translate(screenX, screenY);
-        at.rotate(rotation, Map.BLOCK_SIZE/2, Map.BLOCK_SIZE/2);
+        at.rotate(rotation, (double) Map.BLOCK_SIZE/2, (double) Map.BLOCK_SIZE/2);
         Graphics2D g2d = (Graphics2D) g;
         g2d.drawImage( frames[block], at, null );
     }
