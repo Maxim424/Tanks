@@ -6,7 +6,7 @@ import java.io.File;
 
 public class GamePanel extends JPanel implements MouseListener, MouseMotionListener, KeyListener {
 
-    private final Unit player;
+    public Unit player;
     private final Empty point;
     private final MapEditor mapEditor = MapEditor.getInstance();
     private final Map map = Map.getInstance();
@@ -19,18 +19,17 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
     private long t1, t2;
     public static int w;
     public static int h;
+    public static int savedX = Map.BLOCK_SIZE*8;
+    public static int savedY = Map.BLOCK_SIZE*8;
 
     public GamePanel() {
         t1 = System.currentTimeMillis();
         point = new Empty(0, 0);
         player = new Tank(Map.BLOCK_SIZE*8, Map.BLOCK_SIZE*8, "red");
-
         player.setBot(new Bot(player));
         player.type = HitboxEvent.TANK_RED_TEAM;
         player.setSpeed(100);
         endgame = false;
-
-
     }
 
     public void activateEditor(){
@@ -205,6 +204,9 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
     @Override
     public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ESCAPE){
+            savedX = (int)player.getX();
+            savedY = (int)player.getY();
+
             if (!endgame) {
                 if (isthisfree) {
                     PauseFreeMenu pauseFreeMenu = new PauseFreeMenu();
@@ -223,8 +225,8 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
                     PauseLevelMenu pauseLevelMenu = new PauseLevelMenu();
                     int screenwidth = Toolkit.getDefaultToolkit().getScreenSize().width;
                     int screenheight = Toolkit.getDefaultToolkit().getScreenSize().height;
-                    int thisheight = 400;
-                    int thiswidth = 300;
+                    int thisheight = 550;
+                    int thiswidth = 400;
                     pauseLevelMenu.setLocation((screenwidth - thiswidth) / 2, 50);
                     pauseLevelMenu.setSize(thiswidth, thisheight);
                     JFrame ancestor = (JFrame) SwingUtilities.getWindowAncestor(this);
@@ -245,7 +247,6 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
                 ancestor.setVisible(false);
                 ancestor.dispose();
                 menu.setVisible(true);
-
             }
         }
         if (e.getKeyCode() == KeyEvent.VK_SPACE) {

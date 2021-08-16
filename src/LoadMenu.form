@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="contentPane" layout-manager="GridLayoutManager" row-count="4" column-count="9" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="10" left="10" bottom="10" right="10"/>
     <constraints>
-      <xy x="20" y="20" width="614" height="209"/>
+      <xy x="20" y="20" width="614" height="234"/>
     </constraints>
     <properties>
       <background color="-1382436"/>
@@ -27,7 +27,7 @@
             <properties>
               <background color="-7434870"/>
               <foreground color="-7434870"/>
-              <text value="Загруить карту"/>
+              <text value="Load map"/>
             </properties>
           </component>
         </children>
@@ -48,7 +48,7 @@
             </constraints>
             <properties>
               <background color="-1474444"/>
-              <text value="Выбрать"/>
+              <text value="Select"/>
             </properties>
           </component>
           <component id="e4a76" class="javax.swing.JLabel">
@@ -58,7 +58,7 @@
             <properties>
               <background color="-7434870"/>
               <foreground color="-7434870"/>
-              <text value="Слот 1"/>
+              <text value="Cell 1"/>
             </properties>
           </component>
           <grid id="e3699" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -78,7 +78,7 @@
                 <properties>
                   <background color="-7434870"/>
                   <foreground color="-7434870"/>
-                  <text value="Без названия"/>
+                  <text value="Untitled"/>
                 </properties>
               </component>
             </children>
@@ -106,7 +106,7 @@
             </constraints>
             <properties>
               <background color="-1474444"/>
-              <text value="Выбрать"/>
+              <text value="Select"/>
             </properties>
           </component>
           <component id="e2da3" class="javax.swing.JLabel">
@@ -116,7 +116,7 @@
             <properties>
               <background color="-7434870"/>
               <foreground color="-7434870"/>
-              <text value="Слот 2"/>
+              <text value="Cell 2"/>
             </properties>
           </component>
           <grid id="d51ce" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -136,7 +136,7 @@
                 <properties>
                   <background color="-7434870"/>
                   <foreground color="-7434870"/>
-                  <text value="Без названия"/>
+                  <text value="Untitled"/>
                 </properties>
               </component>
             </children>
@@ -159,7 +159,7 @@
             </constraints>
             <properties>
               <background color="-1474444"/>
-              <text value="Выбрать"/>
+              <text value="Select"/>
             </properties>
           </component>
           <component id="fb331" class="javax.swing.JLabel">
@@ -169,7 +169,7 @@
             <properties>
               <background color="-7434870"/>
               <foreground color="-7434870"/>
-              <text value="Слот 3"/>
+              <text value="Cell 3"/>
             </properties>
           </component>
           <grid id="cfc70" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -189,7 +189,7 @@
                 <properties>
                   <background color="-7434870"/>
                   <foreground color="-7434870"/>
-                  <text value="Без названия"/>
+                  <text value="Untitled"/>
                 </properties>
               </component>
             </children>
@@ -222,7 +222,7 @@
             </constraints>
             <properties>
               <background color="-1474444"/>
-              <text value="Выбрать"/>
+              <text value="Select"/>
             </properties>
           </component>
           <component id="d4e33" class="javax.swing.JLabel">
@@ -232,7 +232,7 @@
             <properties>
               <background color="-7434870"/>
               <foreground color="-7434870"/>
-              <text value="Слот 4"/>
+              <text value="Cell 4"/>
             </properties>
           </component>
           <grid id="cb94a" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -252,7 +252,7 @@
                 <properties>
                   <background color="-7434870"/>
                   <foreground color="-7434870"/>
-                  <text value="Без названия"/>
+                  <text value="Untitled"/>
                 </properties>
               </component>
             </children>
@@ -280,7 +280,7 @@
             </constraints>
             <properties>
               <background color="-1474444"/>
-              <text value="Выбрать"/>
+              <text value="Select"/>
             </properties>
           </component>
           <component id="2dc06" class="javax.swing.JLabel">
@@ -290,7 +290,7 @@
             <properties>
               <background color="-7434870"/>
               <foreground color="-7434870"/>
-              <text value="Слот 5"/>
+              <text value="Cell 5"/>
             </properties>
           </component>
           <grid id="7cd86" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -310,30 +310,11 @@
                 <properties>
                   <background color="-7434870"/>
                   <foreground color="-7434870"/>
-                  <text value="Без названия"/>
+                  <text value="Untitled"/>
                 </properties>
               </component>
             </children>
           </grid>
-        </children>
-      </grid>
-      <grid id="8ce05" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
-        <constraints>
-          <grid row="3" column="6" row-span="1" col-span="3" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties/>
-        <border type="none"/>
-        <children>
-          <component id="bf035" class="javax.swing.JButton" binding="BackButton">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <background color="-1474444"/>
-              <text value="Вернуться в меню"/>
-            </properties>
-          </component>
         </children>
       </grid>
       <grid id="fdd6b" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -351,6 +332,25 @@
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
           </hspacer>
+        </children>
+      </grid>
+      <grid id="8ce05" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="0" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="3" column="2" row-span="1" col-span="5" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties/>
+        <border type="none"/>
+        <children>
+          <component id="bf035" class="javax.swing.JButton" binding="BackButton">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-1474444"/>
+              <text value="Back"/>
+            </properties>
+          </component>
         </children>
       </grid>
     </children>

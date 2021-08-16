@@ -59,19 +59,19 @@ public class LevelChooseMenu extends JDialog {
         final JLabel label1 = new JLabel();
         label1.setBackground(new Color(-7434870));
         label1.setForeground(new Color(-7434870));
-        label1.setText("Выбор уровня");
+        label1.setText("Level selection");
         contentPane.add(label1, new com.intellij.uiDesigner.core.GridConstraints(0, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_NONE, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         comboBox1 = new JComboBox();
         final DefaultComboBoxModel defaultComboBoxModel1 = new DefaultComboBoxModel();
-        defaultComboBoxModel1.addElement("Уровень 1");
-        defaultComboBoxModel1.addElement("Уровень 2");
-        defaultComboBoxModel1.addElement("Уровень 3");
-        defaultComboBoxModel1.addElement("Уровень 4");
+        defaultComboBoxModel1.addElement("Level 1");
+        defaultComboBoxModel1.addElement("Level 2");
+        defaultComboBoxModel1.addElement("Level 3");
+        defaultComboBoxModel1.addElement("Level 4");
         comboBox1.setModel(defaultComboBoxModel1);
         contentPane.add(comboBox1, new com.intellij.uiDesigner.core.GridConstraints(1, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_WEST, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
         StartLevel = new JButton();
         StartLevel.setBackground(new Color(-1474444));
-        StartLevel.setText("Начать");
+        StartLevel.setText("Play");
         contentPane.add(StartLevel, new com.intellij.uiDesigner.core.GridConstraints(2, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_HORIZONTAL, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_SHRINK | com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_CAN_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
     }
 
