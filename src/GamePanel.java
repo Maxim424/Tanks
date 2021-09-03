@@ -6,7 +6,7 @@ import java.io.File;
 
 public class GamePanel extends JPanel implements MouseListener, MouseMotionListener, KeyListener {
 
-    public Unit player;
+    public static Unit player;
     private final Empty point;
     private final MapEditor mapEditor = MapEditor.getInstance();
     private final Map map = Map.getInstance();
