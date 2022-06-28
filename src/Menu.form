@@ -17,7 +17,7 @@
         <properties>
           <background color="-7434870"/>
           <foreground color="-7434870"/>
-          <text value="Главное меню"/>
+          <text value="Main menu"/>
         </properties>
       </component>
       <component id="9d91f" class="javax.swing.JButton" binding="FreeGameButton">
@@ -26,7 +26,7 @@
         </constraints>
         <properties>
           <background color="-1474444"/>
-          <text value="Свободная игра"/>
+          <text value="Free play"/>
         </properties>
       </component>
       <grid id="fcaf1" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
@@ -53,7 +53,7 @@
         </constraints>
         <properties>
           <background color="-1474444"/>
-          <text value="Прохождение"/>
+          <text value="Campaign"/>
         </properties>
       </component>
       <component id="e9252" class="javax.swing.JButton" binding="AboutButton">
@@ -62,7 +62,7 @@
         </constraints>
         <properties>
           <background color="-1474444"/>
-          <text value="О нас"/>
+          <text value="About"/>
         </properties>
       </component>
       <hspacer id="e87cc">

@@ -8,6 +8,7 @@ public class UnitCollection {
 
     public static void setTarget() {
         if (System.currentTimeMillis()%2000<=50) {
+            double _rnd;
             if (UnitCollection.list.get(0).active) {
                 int rnd = (int)(Math.random()*5 + 4);
                 if (UnitCollection.list.get(rnd).active) {
@@ -15,52 +16,85 @@ public class UnitCollection {
                 }
 
             }
+            _rnd = Math.random();
             if (UnitCollection.list.get(1).active) {
                 int rnd = (int)(Math.random()*5 + 4);
                 if (UnitCollection.list.get(rnd).active) {
                     UnitCollection.list.get(1).bot.target = UnitCollection.list.get(rnd);
                 }
             }
+            _rnd = Math.random();
             if (UnitCollection.list.get(2).active) {
                 int rnd = (int)(Math.random()*5 + 4);
                 if (UnitCollection.list.get(rnd).active) {
                     UnitCollection.list.get(2).bot.target = UnitCollection.list.get(rnd);
                 }
             }
+            _rnd = Math.random();
             if (UnitCollection.list.get(3).active) {
                 int rnd = (int)(Math.random()*5 + 4);
                 if (UnitCollection.list.get(rnd).active) {
                     UnitCollection.list.get(3).bot.target = UnitCollection.list.get(rnd);
                 }
             }
-            if (UnitCollection.list.get(4).active) {
-                int rnd = (int)(Math.random()*4);
-                if (UnitCollection.list.get(rnd).active) {
-                    UnitCollection.list.get(4).bot.target = UnitCollection.list.get(rnd);
+            _rnd = Math.random();
+            if (_rnd > 0.5) {
+                UnitCollection.list.get(4).bot.target = GamePanel.player;
+            }
+            else {
+                if (UnitCollection.list.get(4).active) {
+                    int rnd = (int)(Math.random()*4);
+                    if (UnitCollection.list.get(rnd).active) {
+                        UnitCollection.list.get(4).bot.target = UnitCollection.list.get(rnd);
+                    }
                 }
             }
-            if (UnitCollection.list.get(5).active) {
-                int rnd = (int)(Math.random()*4);
-                if (UnitCollection.list.get(rnd).active) {
-                    UnitCollection.list.get(5).bot.target = UnitCollection.list.get(rnd);
+            _rnd = Math.random();
+            if (_rnd > 0.5) {
+                UnitCollection.list.get(5).bot.target = GamePanel.player;
+            }
+            else {
+                if (UnitCollection.list.get(5).active) {
+                    int rnd = (int)(Math.random()*4);
+                    if (UnitCollection.list.get(rnd).active) {
+                        UnitCollection.list.get(5).bot.target = UnitCollection.list.get(rnd);
+                    }
                 }
             }
-            if (UnitCollection.list.get(6).active) {
-                int rnd = (int)(Math.random()*4);
-                if (UnitCollection.list.get(rnd).active) {
-                    UnitCollection.list.get(6).bot.target = UnitCollection.list.get(rnd);
+            _rnd = Math.random();
+            if (_rnd > 0.5) {
+                UnitCollection.list.get(6).bot.target = GamePanel.player;
+            }
+            else {
+                if (UnitCollection.list.get(6).active) {
+                    int rnd = (int)(Math.random()*4);
+                    if (UnitCollection.list.get(rnd).active) {
+                        UnitCollection.list.get(6).bot.target = UnitCollection.list.get(rnd);
+                    }
                 }
             }
-            if (UnitCollection.list.get(7).active) {
-                int rnd = (int)(Math.random()*4);
-                if (UnitCollection.list.get(rnd).active) {
-                    UnitCollection.list.get(7).bot.target = UnitCollection.list.get(rnd);
+            _rnd = Math.random();
+            if (_rnd > 0.5) {
+                UnitCollection.list.get(7).bot.target = GamePanel.player;
+            }
+            else {
+                if (UnitCollection.list.get(7).active) {
+                    int rnd = (int)(Math.random()*4);
+                    if (UnitCollection.list.get(rnd).active) {
+                        UnitCollection.list.get(7).bot.target = UnitCollection.list.get(rnd);
+                    }
                 }
             }
-            if (UnitCollection.list.get(8).active) {
-                int rnd = (int)(Math.random()*4);
-                if (UnitCollection.list.get(rnd).active) {
-                    UnitCollection.list.get(8).bot.target = UnitCollection.list.get(rnd);
+            _rnd = Math.random();
+            if (_rnd > 0.5) {
+                UnitCollection.list.get(8).bot.target = GamePanel.player;
+            }
+            else {
+                if (UnitCollection.list.get(8).active) {
+                    int rnd = (int)(Math.random()*4);
+                    if (UnitCollection.list.get(rnd).active) {
+                        UnitCollection.list.get(8).bot.target = UnitCollection.list.get(rnd);
+                    }
                 }
             }
         }
@@ -133,8 +167,8 @@ public class UnitCollection {
             u.update(ms);
             u.animation.update(ms);
             if (!u.active && System.currentTimeMillis()%1000<=100) {
-                u.hb.body.setX(0);
-                u.hb.body.setY(0);
+                u.hb.body.setX(-Map.BLOCK_SIZE);
+                u.hb.body.setY(-Map.BLOCK_SIZE);
             }
         }
     }
