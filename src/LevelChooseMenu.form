@@ -40,7 +40,7 @@
         <properties>
           <background color="-7434870"/>
           <foreground color="-7434870"/>
-          <text value="Выбор уровня"/>
+          <text value="Level selection"/>
         </properties>
       </component>
       <component id="4d12c" class="javax.swing.JComboBox" binding="comboBox1" default-binding="true">
@@ -49,10 +49,10 @@
         </constraints>
         <properties>
           <model>
-            <item value="Уровень 1"/>
-            <item value="Уровень 2"/>
-            <item value="Уровень 3"/>
-            <item value="Уровень 4"/>
+            <item value="Level 1"/>
+            <item value="Level 2"/>
+            <item value="Level 3"/>
+            <item value="Level 4"/>
           </model>
         </properties>
       </component>
@@ -62,7 +62,7 @@
         </constraints>
         <properties>
           <background color="-1474444"/>
-          <text value="Начать"/>
+          <text value="Play"/>
         </properties>
       </component>
     </children>

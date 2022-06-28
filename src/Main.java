@@ -78,7 +78,8 @@ public class Main {
     }
 
     public void ContinueGame(){
-
+        panel.player.bottom.setX(GamePanel.savedX);
+        panel.player.bottom.setY(GamePanel.savedY);
     }
 
     public void LoadGame(int slot){
@@ -110,5 +111,6 @@ public class Main {
     public void SaveGame(int slot, String name){
         initialized.saveMatrix(slot, name);
         GamePanel.isthisfree = true;
+        ContinueGame();
     }
 }
