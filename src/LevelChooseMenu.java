@@ -23,9 +23,9 @@ public class LevelChooseMenu extends JDialog {
                 dispose();
                 Main game = new Main();
                 if (paused)
-                    game.LoadLevel(level);
+                    game.loadLevel(level);
                 else
-                    game.LoadLevelfromStart(level);
+                    game.loadLevelFromStart(level);
             }
         });
     }

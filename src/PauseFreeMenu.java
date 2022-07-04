@@ -19,7 +19,7 @@ public class PauseFreeMenu extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 Main game = new Main();
-                game.ContinueGame();
+                game.continueGame();
             }
         });
         MainMenuButton.addActionListener(new ActionListener() {

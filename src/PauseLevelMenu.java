@@ -19,7 +19,7 @@ public class PauseLevelMenu extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 Main game = new Main();
-                game.ContinueGame();
+                game.continueGame();
             }
         });
         LevelChooseButton.addActionListener(new ActionListener() {

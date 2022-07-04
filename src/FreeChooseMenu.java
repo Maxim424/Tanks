@@ -17,7 +17,7 @@ public class FreeChooseMenu extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 Main game = new Main();
-                game.NewGame();
+                game.newGame();
             }
         });
         LoadMapButton.addActionListener(new ActionListener() {

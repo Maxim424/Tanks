@@ -36,7 +36,7 @@ public class SaveMenu extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 Main game = new Main();
-                game.SaveGame(1, SlotName1.getText());
+                game.saveGame(1, SlotName1.getText());
             }
         });
         Slot2Button.addActionListener(new ActionListener() {
@@ -44,7 +44,7 @@ public class SaveMenu extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 Main game = new Main();
-                game.SaveGame(2, SlotName2.getText());
+                game.saveGame(2, SlotName2.getText());
             }
         });
         Slot3Button.addActionListener(new ActionListener() {
@@ -52,7 +52,7 @@ public class SaveMenu extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 Main game = new Main();
-                game.SaveGame(3, SlotName3.getText());
+                game.saveGame(3, SlotName3.getText());
             }
         });
         Slot4Button.addActionListener(new ActionListener() {
@@ -60,7 +60,7 @@ public class SaveMenu extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 Main game = new Main();
-                game.SaveGame(4, SlotName4.getText());
+                game.saveGame(4, SlotName4.getText());
             }
         });
         Slot5Button.addActionListener(new ActionListener() {
@@ -68,7 +68,7 @@ public class SaveMenu extends JDialog {
             public void actionPerformed(ActionEvent e) {
                 dispose();
                 Main game = new Main();
-                game.SaveGame(5, SlotName5.getText());
+                game.saveGame(5, SlotName5.getText());
             }
         });
 

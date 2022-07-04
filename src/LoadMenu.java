@@ -61,9 +61,9 @@ public class LoadMenu extends JDialog {
                 dispose();
                 Main game = new Main();
                 if (paused)
-                    game.LoadGame(1);
+                    game.loadGame(1);
                 else
-                    game.LoadGamefromStart(1);
+                    game.loadGameFromStart(1);
             }
         });
         Slot2Button.addActionListener(new ActionListener() {
@@ -72,9 +72,9 @@ public class LoadMenu extends JDialog {
                 dispose();
                 Main game = new Main();
                 if (paused)
-                    game.LoadGame(2);
+                    game.loadGame(2);
                 else
-                    game.LoadGamefromStart(2);
+                    game.loadGameFromStart(2);
             }
         });
         Slot3Button.addActionListener(new ActionListener() {
@@ -83,9 +83,9 @@ public class LoadMenu extends JDialog {
                 dispose();
                 Main game = new Main();
                 if (paused)
-                    game.LoadGame(3);
+                    game.loadGame(3);
                 else
-                    game.LoadGamefromStart(3);
+                    game.loadGameFromStart(3);
             }
         });
         Slot4Button.addActionListener(new ActionListener() {
@@ -94,9 +94,9 @@ public class LoadMenu extends JDialog {
                 dispose();
                 Main game = new Main();
                 if (paused)
-                    game.LoadGame(4);
+                    game.loadGame(4);
                 else
-                    game.LoadGamefromStart(4);
+                    game.loadGameFromStart(4);
             }
         });
         Slot5Button.addActionListener(new ActionListener() {
@@ -105,9 +105,9 @@ public class LoadMenu extends JDialog {
                 dispose();
                 Main game = new Main();
                 if (paused)
-                    game.LoadGame(5);
+                    game.loadGame(5);
                 else
-                    game.LoadGamefromStart(5);
+                    game.loadGameFromStart(5);
             }
         });
     }
