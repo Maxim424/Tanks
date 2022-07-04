@@ -14,40 +14,41 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
     private KeyState keyState = KeyState.getInstance();
 
     public static boolean endgame;
-    public static boolean isthisfree;
+    public static boolean isFree;
 
     private long t1, t2;
     public static int w;
     public static int h;
-    public static int savedX = Map.BLOCK_SIZE*8;
-    public static int savedY = Map.BLOCK_SIZE*8;
+    public static int savedX = Map.BLOCK_SIZE * 8;
+    public static int savedY = Map.BLOCK_SIZE * 8;
 
     public GamePanel() {
         t1 = System.currentTimeMillis();
         point = new Empty(0, 0);
-        player = new Tank(Map.BLOCK_SIZE*8, Map.BLOCK_SIZE*8, "red");
+        player = new Tank(Map.BLOCK_SIZE * 8, Map.BLOCK_SIZE * 8, "red");
         player.setBot(new Bot(player));
         player.type = HitboxEvent.TANK_RED_TEAM;
         player.setSpeed(100);
         endgame = false;
     }
 
-    public void activateEditor(){
+    public void activateEditor() {
         mapEditor.setActive(true);
     }
 
-    public void createBots(){
+    public void createBots() {
+        // Red team.
         UnitCollection.spawnTank(12, 4, HitboxEvent.TANK_RED_TEAM);
         UnitCollection.spawnTank(10, 6, HitboxEvent.TANK_RED_TEAM);
         UnitCollection.spawnTank(6, 10, HitboxEvent.TANK_RED_TEAM);
         UnitCollection.spawnTank(4, 12, HitboxEvent.TANK_RED_TEAM);
 
+        // Blue team.
         UnitCollection.spawnTank(Map.WORLD_SIZE - 12, Map.WORLD_SIZE - 4, HitboxEvent.TANK_BLUE_TEAM);
         UnitCollection.spawnTank(Map.WORLD_SIZE - 10, Map.WORLD_SIZE - 6, HitboxEvent.TANK_BLUE_TEAM);
         UnitCollection.spawnTank(Map.WORLD_SIZE - 8, Map.WORLD_SIZE - 8, HitboxEvent.TANK_BLUE_TEAM);
         UnitCollection.spawnTank(Map.WORLD_SIZE - 6, Map.WORLD_SIZE - 10, HitboxEvent.TANK_BLUE_TEAM);
         UnitCollection.spawnTank(Map.WORLD_SIZE - 4, Map.WORLD_SIZE - 12, HitboxEvent.TANK_BLUE_TEAM);
-
     }
 
     private void controlPlayer(int ms) {
@@ -77,18 +78,17 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
     }
 
     private void update() {
-
         w = getWidth();
         h = getHeight();
         t2 = System.currentTimeMillis();
         int ms = (int) (t2 - t1);
-
         if (!mapEditor.isActive()) {
             UnitCollection.update(ms);
             UnitCollection.spawnBullets();
             UnitCollection.setTarget();
-            camera.setPosition(player.getX() - getWidth() / 2.0 - 16, player.getY() - getHeight() / 2.0 - 16, getWidth(), getHeight());
-        } else{
+            camera.setPosition(player.getX() - getWidth() / 2.0 - 16, player.getY() - getHeight() / 2.0 - 16,
+                    getWidth(), getHeight());
+        } else {
             point.update(ms);
             camera.setPosition(point.getX(), point.getY(), getWidth(), getHeight());
         }
@@ -96,7 +96,7 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
             endgame = true;
         }
         int cnt = 0;
-        for (int i = 4; i<=8; i++) {
+        for (int i = 4; i <= 8; i++) {
             if (!UnitCollection.list.get(i).active) {
                 cnt++;
             }
@@ -119,35 +119,31 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
         mapEditor.paint(g);
         if (!endgame) {
             update();
-        }
-        else {
-
+        } else {
             if (player.active) {
                 try {
-                    g.drawImage(ImageIO.read(new File("images/YouWon.png")), w/2 - 360, h/2 - 202, null);
-                }
-                catch (Exception e) {
+                    g.drawImage(ImageIO.read(new File("images/YouWon.png")),
+                            w / 2 - 360, h / 2 - 202, null);
+                } catch (Exception e) {
                     g.setColor(Color.GREEN);
                     g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 50));
-                    g.drawString("You just won the battle", w/2 - 200, h/2);
+                    g.drawString("You just won the battle", w / 2 - 200, h / 2);
                     g.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 22));
-                    g.drawString("Press [esc] to exit to the main menu", w/2 - 100, h/2 + 60);
+                    g.drawString("Press [esc] to exit to the main menu", w / 2 - 100, h / 2 + 60);
                 }
-            }
-            else {
+            } else {
                 try {
-                    g.drawImage(ImageIO.read(new File("images/GameOver.png")), w/2 - 360, h/2 - 202, null);
-                }
-                catch (Exception e) {
+                    g.drawImage(ImageIO.read(new File("images/GameOver.png")),
+                            w / 2 - 360, h / 2 - 202, null);
+                } catch (Exception e) {
                     g.setColor(Color.RED);
                     g.setFont(new Font(Font.SANS_SERIF, Font.BOLD, 50));
-                    g.drawString("Your tank has been destroyed", w/2 - 200, h/2);
+                    g.drawString("Your tank has been destroyed", w / 2 - 200, h / 2);
                     g.setFont(new Font(Font.SANS_SERIF, Font.PLAIN, 22));
-                    g.drawString("Press [esc] to exit to the main menu", w/2 - 100, h/2 + 60);
+                    g.drawString("Press [esc] to exit to the main menu", w / 2 - 100, h / 2 + 60);
                 }
             }
         }
-
         addMouseListener(mapEditor);
         addMouseMotionListener(this);
         repaint();
@@ -157,7 +153,6 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
     public void mouseMoved(MouseEvent e) {
         int x = e.getX();
         int y = e.getY();
-
         int x2 = camera.getScreenX(player.getCenterX());
         int y2 = camera.getScreenY(player.getCenterY());
         int dy = y - y2;
@@ -172,77 +167,66 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
 
     @Override
     public void mousePressed(MouseEvent e) {
-
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-
     }
 
     @Override
     public void mouseEntered(MouseEvent e) {
-
     }
 
     @Override
     public void mouseExited(MouseEvent e) {
-
     }
 
     @Override
     public void mouseDragged(MouseEvent mouseEvent) {
-
     }
 
 
     @Override
     public void keyTyped(KeyEvent e) {
-
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-        if (e.getKeyCode() == KeyEvent.VK_ESCAPE){
-            savedX = (int)player.getX();
-            savedY = (int)player.getY();
+        if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+            savedX = (int) player.getX();
+            savedY = (int) player.getY();
 
             if (!endgame) {
-                if (isthisfree) {
+                if (isFree) {
                     PauseFreeMenu pauseFreeMenu = new PauseFreeMenu();
-                    int screenwidth = Toolkit.getDefaultToolkit().getScreenSize().width;
-                    int screenheight = Toolkit.getDefaultToolkit().getScreenSize().height;
-                    int thisheight = 550;
-                    int thiswidth = 400;
-                    pauseFreeMenu.setLocation((screenwidth - thiswidth) / 2, 50);
-                    pauseFreeMenu.setSize(thiswidth, thisheight);
+                    int screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+                    int thisHeight = 550;
+                    int thisWidth = 400;
+                    pauseFreeMenu.setLocation((screenWidth - thisWidth) / 2, 50);
+                    pauseFreeMenu.setSize(thisWidth, thisHeight);
                     JFrame ancestor = (JFrame) SwingUtilities.getWindowAncestor(this);
                     ancestor.setVisible(false);
                     ancestor.dispose();
                     pauseFreeMenu.setVisible(true);
-                }
-                else{
+                } else {
                     PauseLevelMenu pauseLevelMenu = new PauseLevelMenu();
-                    int screenwidth = Toolkit.getDefaultToolkit().getScreenSize().width;
-                    int screenheight = Toolkit.getDefaultToolkit().getScreenSize().height;
-                    int thisheight = 550;
-                    int thiswidth = 400;
-                    pauseLevelMenu.setLocation((screenwidth - thiswidth) / 2, 50);
-                    pauseLevelMenu.setSize(thiswidth, thisheight);
+                    int screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+                    int thisHeight = 550;
+                    int thisWidth = 400;
+                    pauseLevelMenu.setLocation((screenWidth - thisWidth) / 2, 50);
+                    pauseLevelMenu.setSize(thisWidth, thisHeight);
                     JFrame ancestor = (JFrame) SwingUtilities.getWindowAncestor(this);
                     ancestor.setVisible(false);
                     ancestor.dispose();
                     pauseLevelMenu.setVisible(true);
                 }
-            }
-            else {
+            } else {
                 Menu menu = new Menu();
-                int screenwidth = Toolkit.getDefaultToolkit().getScreenSize().width;
-                int screenheight = Toolkit.getDefaultToolkit().getScreenSize().height;
-                int thisheight = 550;
-                int thiswidth = 400;
-                menu.setLocation((screenwidth - thiswidth) / 2, 50);
-                menu.setSize(thiswidth, thisheight);
+                int screenWidth = Toolkit.getDefaultToolkit().getScreenSize().width;
+                int thisHeight = 550;
+                int thisWidth = 400;
+                menu.setLocation((screenWidth - thisWidth) / 2, 50);
+                menu.setSize(thisWidth, thisHeight);
                 JFrame ancestor = (JFrame) SwingUtilities.getWindowAncestor(this);
                 ancestor.setVisible(false);
                 ancestor.dispose();
@@ -256,6 +240,5 @@ public class GamePanel extends JPanel implements MouseListener, MouseMotionListe
 
     @Override
     public void keyReleased(KeyEvent e) {
-
     }
 }

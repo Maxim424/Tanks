@@ -15,26 +15,26 @@ public class Main {
         ImageHelper.crop(4, 3, Map.BULLET_1);
         ImageHelper.crop(4, 2, Map.BULLET_3);
 
-        // 10 - 19 Красная платформа
+        // 10 - 19 Red platform.
         for (int i = 0; i < 10; i++) {
             ImageHelper.crop(2, i, 10 + i);
         }
 
-        // 21 - 30 Синяя платформа
+        // 21 - 30 Blue platform.
         for (int i = 0; i < 10; i++) {
             ImageHelper.crop(10, i, 21 + i);
         }
 
-        // 20 Красная башня
+        // 20 Red tank tower.
         ImageHelper.crop(3, 0, 20);
 
-        // 31 Синяя башня
+        // 31 Blue tank tower.
         ImageHelper.crop(3, 2, 31);
 
-        // 32 Пуля
+        // 32 Bullet.
         ImageHelper.crop(4, 1, 32);
 
-        // 33 - 42 Взрыв
+        // 33 - 42 Explosion.
         for (int i = 4; i <= 8; i++) {
             ImageHelper.crop(8, i, 33 + i - 4);
         }
@@ -62,14 +62,14 @@ public class Main {
         map.createWorld(Map.WORLD_SIZE, Map.WORLD_SIZE);
         gamePanel.createBots();
         GamePanel.endgame = false;
-        GamePanel.isthisfree = true;
+        GamePanel.isFree = true;
         MapEditor mapEditor = MapEditor.getInstance();
         mapEditor.setActive(true);
     }
 
     public void newMap() {
         map.createWorld(Map.WORLD_SIZE, Map.WORLD_SIZE);
-        GamePanel.isthisfree = true;
+        GamePanel.isFree = true;
         gamePanel.activateEditor();
     }
 
@@ -80,7 +80,7 @@ public class Main {
 
     public void loadGame(int slot) {
         map.loadMatrix(slot);
-        GamePanel.isthisfree = true;
+        GamePanel.isFree = true;
     }
 
     public void loadGameFromStart(int slot) {
@@ -88,12 +88,12 @@ public class Main {
         gamePanel.createBots();
         map.loadMatrix(slot);
         GamePanel.endgame = false;
-        GamePanel.isthisfree = true;
+        GamePanel.isFree = true;
     }
 
     public void loadLevel(int slot) {
         map.loadMatrixLevel(slot);
-        GamePanel.isthisfree = false;
+        GamePanel.isFree = false;
     }
 
     public void loadLevelFromStart(int slot) {
@@ -101,12 +101,12 @@ public class Main {
         gamePanel.createBots();
         map.loadMatrixLevel(slot);
         GamePanel.endgame = false;
-        GamePanel.isthisfree = false;
+        GamePanel.isFree = false;
     }
 
     public void saveGame(int slot, String name) {
         map.saveMatrix(slot, name);
-        GamePanel.isthisfree = true;
+        GamePanel.isFree = true;
         continueGame();
     }
 }
